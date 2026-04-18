@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Shop All Sneakers | KickUpNepal</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/variables.css"/>
+    <link rel="stylesheet" href="../assets/css/global.css"/>
+    <link rel="stylesheet" href="../assets/css/layout.css"/>
+    <link rel="stylesheet" href="../assets/css/components.css"/>
+    <style>
+    .shop-layout{display:flex;gap:2.5rem;padding:3rem 0 6rem;align-items:flex-start;}
+    .shop-sidebar{width:260px;flex-shrink:0;background:#fff;padding:1.5rem;border-radius:12px;border:1px solid var(--color-surface-border);position:sticky;top:110px;display:none;}
+    @media(min-width:1024px){.shop-sidebar{display:block;}}
+    .shop-main{flex:1;min-width:0;}
+    .filter-group{margin-bottom:1.5rem;border-bottom:1px solid var(--color-surface-border);padding-bottom:1.5rem;}
+    .filter-group h4{font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;color:var(--color-text-primary);}
+    .filter-item{display:flex;align-items:center;gap:.75rem;padding:.35rem 0;cursor:pointer;font-size:.9rem;font-weight:500;}
+    .filter-item input{accent-color:var(--color-nepal-blue);width:16px;height:16px;}
+    .shop-top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;}
+    .sort-select{padding:.5rem 1rem;border:1px solid var(--color-surface-border);border-radius:8px;font-weight:600;font-size:.85rem;cursor:pointer;}
+    #shop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
+    @media(min-width:768px){#shop-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(min-width:1280px){#shop-grid{grid-template-columns:repeat(4,1fr);}}
+    .no-results{grid-column:1/-1;text-align:center;padding:5rem 1rem;color:var(--color-text-muted);}
+    .shop-hero{background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);padding:4rem 0;text-align:center;border-bottom:1px solid var(--color-surface-border);}
+    .price-range{display:flex;align-items:center;gap:1rem;}
+    .price-range input[type=range]{flex:1;accent-color:var(--color-nepal-blue);}
+</style>
+</head>
+<body>
+
+<!-- Top Promo Bar -->
+<div class="promo-bar">
+    Authentic Heat 🔥 Fast Shipping Across Nepal - From Kathmandu to EBC!
+</div>
+
+<!-- Main Retail Header -->
+<header class="header-main">
+    <div class="container navbar-top">
+        <a href="../index.html" class="brand-logo">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></a>
+        
+        <div class="nav-search">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Search for Jordans, Yeezys, Nike..."/>
+                <button class="search-btn material-symbols-outlined">search</button>
+            </div>
+        </div>
+        
+        <div class="nav-actions">
+            <a href="../pages/dashboard.html" class="action-item d-none md-flex">
+                <span class="material-symbols-outlined">favorite</span>
+                <span>Wishlist</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item" style="display:flex;align-items:center;gap:0.4rem;">
+                <div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:2px solid var(--color-nepal-red);flex-shrink:0;">
+                    <img src="../assets/images/users/user1.jpg" alt="Profile" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <span style="font-size:0.8rem;">My Account</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span>Cart</span>
+                <span class="cart-badge" style="background-color: var(--color-nepal-red);">3</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="navbar-categories no-scrollbar">
+        <div class="categories-list">
+            <a href="../pages/shop.html" style="color: var(--color-nepal-red); font-weight: 800;">Aago Deals 🔥</a>
+            <a href="../pages/shop.html">New Arrivals</a>
+            
+            <div class="has-mega-menu">
+                <a href="../pages/shop.html" style="cursor: pointer; position: relative; padding-bottom: 0.75rem;">Sneakers <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">expand_more</span></a>
+                <div class="mega-menu">
+                    <div class="mega-menu-inner">
+                        <div class="mega-menu-column">
+                            <h4>Nike</h4>
+                            <a href="../pages/shop.html">Air Force 1</a>
+                            <a href="../pages/shop.html">Air Max 90</a>
+                            <a href="../pages/shop.html">Dunk Low</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Jordan</h4>
+                            <a href="../pages/shop.html">Jordan 1 High</a>
+                            <a href="../pages/shop.html">Jordan 4</a>
+                            <a href="../pages/shop.html">Jordan 11</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Adidas</h4>
+                            <a href="../pages/shop.html">Yeezy Boost 350</a>
+                            <a href="../pages/shop.html">Yeezy Slide</a>
+                            <a href="../pages/shop.html">Samba Classic</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>New Balance</h4>
+                            <a href="../pages/shop.html">550 Series</a>
+                            <a href="../pages/shop.html">990v5 Core</a>
+                            <a href="../pages/shop.html">2002R Protection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../pages/blog.html">Blog</a>
+            <a href="../pages/about.html">About Us</a>
+            <a href="../pages/contact.html">Contact Us</a>
+        </div>
+    </div>
+</header>
+
+<section class="shop-hero">
+    <div class="container">
+        <h1 class="text-5xl font-black mb-2">All Sneakers</h1>
+        <p class="section-subtitle">Authentic kicks delivered across Nepal · <span id="product-count">15</span> products</p>
+    </div>
+</section>
+
+<main class="container">
+    <div id="search-result-banner"></div>
+    <div class="shop-layout">
+        <!-- Sidebar Filters -->
+        <aside class="shop-sidebar">
+            <h3 class="font-bold mb-4" style="font-size:.9rem;text-transform:uppercase;letter-spacing:.1em;">Filters</h3>
+            <div class="filter-group">
+                <h4>Brand</h4>
+                <label class="filter-item"><input type="checkbox" class="brand-filter" value="jordan"> Jordan</label>
+                <label class="filter-item"><input type="checkbox" class="brand-filter" value="nike"> Nike</label>
+                <label class="filter-item"><input type="checkbox" class="brand-filter" value="adidas"> Adidas / Yeezy</label>
+                <label class="filter-item"><input type="checkbox" class="brand-filter" value="newbalance"> New Balance</label>
+                <label class="filter-item"><input type="checkbox" class="brand-filter" value="vans"> Vans</label>
+                <label class="filter-item"><input type="checkbox" class="brand-filter" value="asics"> Asics</label>
+            </div>
+            <div class="filter-group">
+                <h4>Category</h4>
+                <label class="filter-item"><input type="checkbox" class="cat-filter" value="jordan"> Jordan</label>
+                <label class="filter-item"><input type="checkbox" class="cat-filter" value="nike"> Nike</label>
+                <label class="filter-item"><input type="checkbox" class="cat-filter" value="yeezy"> Yeezy</label>
+                <label class="filter-item"><input type="checkbox" class="cat-filter" value="newbalance"> New Balance</label>
+                <label class="filter-item"><input type="checkbox" class="cat-filter" value="apparel"> Apparel</label>
+                <label class="filter-item"><input type="checkbox" class="cat-filter" value="vans"> Vans</label>
+                <label class="filter-item"><input type="checkbox" class="cat-filter" value="asics"> Asics</label>
+            </div>
+            <div class="filter-group">
+                <h4>Max Price: <span id="price-label">Rs. 50,000</span></h4>
+                <div class="price-range">
+                    <span style="font-size:.75rem;">0</span>
+                    <input type="range" id="price-filter" min="0" max="50000" value="50000" step="500">
+                    <span style="font-size:.75rem;">50k</span>
+                </div>
+            </div>
+            <button class="btn btn-primary" style="width:100%;margin-top:.5rem;" id="apply-filters">Apply Filters</button>
+            <button class="btn" style="width:100%;margin-top:.5rem;background:none;color:var(--color-nepal-blue);font-weight:700;" id="clear-filters">Clear All</button>
+        </aside>
+
+        <div class="shop-main">
+            <div class="shop-top-bar">
+                <span id="visible-count" class="text-muted text-sm font-semibold"></span>
+                <select class="sort-select" id="sort-select">
+                    <option value="default">Sort: Featured</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="name-asc">Name: A–Z</option>
+                </select>
+            </div>
+            <div id="shop-grid"></div>
+        </div>
+    </div>
+</main>
+
+<!-- Fat Footer Mega Retail -->
+<footer>
+    <div class="container">
+        <div class="grid lg:grid-cols-2 gap-8 items-center" style="margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid #dee2e6;">
+            <div>
+                <h3 class="text-2xl font-black mb-2">Subscribe to our Newsletter</h3>
+                <p class="text-muted text-sm">Get the latest sneaker news and 10% off your first order.</p>
+            </div>
+            <div class="flex gap-2">
+                <input type="email" placeholder="Your Email Address" style="flex:1; padding: 0.75rem 1rem; border: 1px solid #ced4da; border-radius: 4px;"/>
+                <button class="btn btn-accent" style="padding: 0.75rem 2rem;">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>CUSTOMER SERVICE</h4>
+                <div class="footer-links">
+                    <a href="help.html">Help Center</a>
+                    <a href="track-order.html">Track Order</a>
+                    <a href="returns.html">Return Policy</a>
+                    <a href="shipping.html">Shipping Inside Nepal</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>COMPANY INFO</h4>
+                <div class="footer-links">
+                    <a href="about.html">About KickUpNepal</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="store-locator.html">Store Locator</a>
+                    <a href="authenticity.html">Authenticity Guarantee</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>TOP CATEGORIES</h4>
+                <div class="footer-links">
+                    <a href="shop.html">Air Jordan</a>
+                    <a href="shop.html">Nike Dunk</a>
+                    <a href="shop.html">Yeezy</a>
+                    <a href="shop.html">New Balance</a>
+                </div>
+            </div>
+            <div class="footer-col" style="text-align:right;">
+                <h2 class="font-black text-3xl mb-2">KickUp<span style="color:var(--color-nepal-red);">Nepal</span></h2>
+                <p class="text-sm text-muted mb-4">The #1 Platform for Authentic Sneakers in Nepal.</p>
+                <div style="margin-top:2rem;display:inline-block;text-align:left;">
+                    <h4 style="font-size:1.1rem;font-weight:800;margin-bottom:0.75rem;">We Accept</h4>
+                    <div style="display:flex;gap:0.75rem;align-items:center;">
+                        <div style="background:white;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;">
+                            <img src="../assets/images/design/esewa.png" alt="eSewa" style="height:18px;object-fit:contain;">
+                        </div>
+                        <div style="background:white;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;">
+                            <img src="../assets/images/design/khalti.png" alt="Khalti" style="height:18px;object-fit:contain;">
+                        </div>
+                        <div style="background:white;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;">
+                            <img src="../assets/images/design/pngegg.png" alt="Cards" style="height:20px;object-fit:contain;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="fb-inner container" style="display:flex;justify-content:center;align-items:center;padding:1rem 0;">
+                <div style="color:var(--color-text-muted);">© 2024 KickUpNepal Pvt. Ltd. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="../assets/js/products.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/search.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('shop-grid');
+    const sortSelect = document.getElementById('sort-select');
+    const priceFilter = document.getElementById('price-filter');
+    const priceLabel = document.getElementById('price-label');
+
+    function formatPrice(p){ return 'Rs. '+ p.toLocaleString(); }
+
+    function renderGrid(products){
+        document.getElementById('visible-count').textContent = products.length + ' products';
+        document.getElementById('product-count').textContent = products.length;
+        if(!products.length){
+            grid.innerHTML = '<div class="no-results"><span class="material-symbols-outlined" style="font-size:4rem;display:block;margin-bottom:1rem;">search_off</span><h3>No products found</h3><p>Try adjusting your filters</p><a href="shop.html" class="btn btn-primary" style="margin-top:1.5rem;text-decoration:none;">Clear Filters</a></div>';
+            return;
+        }
+        grid.innerHTML = products.map(p => {
+            const badge = p.badge ? `<div class="product-badges"><span class="badge badge-${p.badgeType||'sale'}">${p.badge}</span></div>` : '';
+            const oldPrice = p.oldPrice ? `<span class="product-price-old">${formatPrice(p.oldPrice)}</span>` : '';
+            return `<div class="product-card">
+                ${badge}
+                <div class="product-image-wrap">
+                    <img src="${p.image}" alt="${p.name}" loading="lazy"/>
+                    <div class="hover-actions">
+                        <a href="product.html?id=${p.id}" class="btn btn-primary" style="flex:1;text-decoration:none;">View Details</a>
+                        <button class="btn btn-accent" style="flex:1;" data-add-cart="${p.id}" data-size="9">Add Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">${p.brand}</div>
+                    <h3 class="product-title">${p.name}</h3>
+                    <div class="product-price-wrap">
+                        <span class="product-price">${formatPrice(p.price)}</span>${oldPrice}
+                        <button class="btn-add-cart" data-add-cart="${p.id}" data-size="9"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    </div>
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    function getFiltered(){
+        const brands = [...document.querySelectorAll('.brand-filter:checked')].map(e=>e.value.toLowerCase());
+        const cats = [...document.querySelectorAll('.cat-filter:checked')].map(e=>e.value);
+        const maxPrice = parseInt(priceFilter.value);
+        let list = [...KUN_PRODUCTS];
+        if(brands.length) list = list.filter(p=>brands.some(b=>p.brand.toLowerCase().includes(b)||p.category.includes(b)));
+        if(cats.length) list = list.filter(p=>cats.includes(p.category));
+        list = list.filter(p=>p.price <= maxPrice);
+        const sort = sortSelect.value;
+        if(sort==='price-asc') list.sort((a,b)=>a.price-b.price);
+        if(sort==='price-desc') list.sort((a,b)=>b.price-a.price);
+        if(sort==='name-asc') list.sort((a,b)=>a.name.localeCompare(b.name));
+        return list;
+    }
+
+    // URL param search/category
+    const params = new URLSearchParams(window.location.search);
+    const searchQ = params.get('search');
+    const catQ = params.get('category');
+    if(catQ){
+        const cb = document.querySelector(`.cat-filter[value="${catQ}"]`);
+        if(cb) cb.checked = true;
+    }
+    if(searchQ){
+        const banner = document.getElementById('search-result-banner');
+        banner.innerHTML = `<div style="background:#eef2ff;border-radius:10px;padding:.75rem 1.25rem;margin:1rem 0;display:flex;align-items:center;justify-content:space-between;font-weight:600;font-size:.9rem;color:#3730a3;"><span>🔍 Results for: <strong>"${searchQ}"</strong></span><a href="shop.html" style="color:#DC143C;">Clear ×</a></div>`;
+        renderGrid(KUN_PRODUCTS.filter(p=>p.name.toLowerCase().includes(searchQ.toLowerCase())||p.brand.toLowerCase().includes(searchQ.toLowerCase())||p.tags.some(t=>t.includes(searchQ.toLowerCase()))));
+    } else {
+        renderGrid(getFiltered());
+    }
+
+    priceFilter.addEventListener('input',()=>{ priceLabel.textContent=formatPrice(parseInt(priceFilter.value)); });
+    sortSelect.addEventListener('change',()=>renderGrid(getFiltered()));
+    document.getElementById('apply-filters').addEventListener('click',()=>renderGrid(getFiltered()));
+    document.getElementById('clear-filters').addEventListener('click',()=>{
+        document.querySelectorAll('.brand-filter,.cat-filter').forEach(cb=>cb.checked=false);
+        priceFilter.value=50000; priceLabel.textContent='Rs. 50,000';
+        renderGrid([...KUN_PRODUCTS]);
+    });
+});
+</script>
+</body>
+</html>

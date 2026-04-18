@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Dashboard | KickUpNepal</title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../assets/css/variables.css"/>
+    <link rel="stylesheet" href="../assets/css/global.css"/>
+    <link rel="stylesheet" href="../assets/css/layout.css"/>
+    <link rel="stylesheet" href="../assets/css/components.css"/>
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css"/>
+</head>
+<body>
+
+<div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="brand-logo" style="font-size: 1.25rem;">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></a>
+        </div>
+
+        <!-- User Profile Card in Sidebar -->
+        <div style="padding: 1.5rem 1rem; border-bottom: 1px solid var(--color-surface-border); text-align: center;">
+            <div style="width: 72px; height: 72px; border-radius: 50%; overflow: hidden; margin: 0 auto 0.75rem; border: 3px solid var(--color-nepal-red); box-shadow: 0 4px 12px rgba(220,20,60,0.2);">
+                <img src="../assets/images/users/user1.jpg" alt="User" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Niraj Thapa</div>
+            <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 2px;">niraj@example.com</div>
+            <span style="display:inline-block; background: linear-gradient(90deg,#003893,#DC143C); color:white; border-radius:99px; padding:0.2rem 0.75rem; font-size:0.7rem; font-weight:700; margin-top:0.5rem;">🔥 VIP Member</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <span class="material-symbols-outlined">dashboard</span>
+                Overview
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">shopping_bag</span>
+                My Orders
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">favorite</span>
+                Wishlist
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">person</span>
+                Account Details
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">location_on</span>
+                Saved Addresses
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="../index.html" class="nav-item">
+                <span class="material-symbols-outlined">logout</span>
+                Log Out
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Topbar -->
+        <header class="topbar">
+            <h2 class="font-bold">My Account</h2>
+            
+            <div class="flex items-center gap-4">
+                <button class="material-symbols-outlined text-muted">notifications</button>
+                <div class="user-profile">
+                    <div class="avatar" style="padding:0; overflow:hidden; background:transparent;">
+                        <img src="../assets/images/users/user1.jpg" alt="Niraj K." style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+                    </div>
+                    <span class="font-semibold text-sm">Niraj K.</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Inner Content -->
+        <div class="dashboard-container">
+            <h1 class="text-3xl font-black mb-6">Welcome Back, Niraj.</h1>
+            
+            <!-- Stats -->
+            <div class="stat-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="text-sm font-bold">Total Orders</span>
+                        <span class="material-symbols-outlined">shopping_cart_checkout</span>
+                    </div>
+                    <div class="stat-value">12</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="text-sm font-bold">Wishlisted Items</span>
+                        <span class="material-symbols-outlined">favorite</span>
+                    </div>
+                    <div class="stat-value">4</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="text-sm font-bold">KickUp Points</span>
+                        <span class="material-symbols-outlined">loyalty</span>
+                    </div>
+                    <div class="stat-value" style="color: var(--color-nepal-blue);">1,250</div>
+                    <div class="stat-change">Rs. 1,250 off next purchase!</div>
+                </div>
+            </div>
+
+            <!-- Recent Orders Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3 class="table-title">Recent Orders</h3>
+                    <a href="#" style="color: var(--color-nepal-blue); font-weight: 700; font-size: 0.875rem;">View All</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Product</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#" class="auth-link">#KUN-8842</a></td>
+                            <td>
+                                <div class="order-product">
+                                    <div class="order-img">
+                                        <img src="../assets/images/products/a.png" alt="Shoe"/>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold">Air Jordan 1 High</div>
+                                        <div class="text-xs text-muted">Size: US 10</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Oct 12, 2024</td>
+                            <td><span class="status completed">Delivered</span></td>
+                            <td class="font-bold">Rs. 24,000</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#" class="auth-link">#KUN-8891</a></td>
+                            <td>
+                                <div class="order-product">
+                                    <div class="order-img">
+                                        <img src="../assets/images/products/c.png" alt="Shoe"/>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold">Cloudrunner X</div>
+                                        <div class="text-xs text-muted">Size: US 9.5</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Oct 15, 2024</td>
+                            <td><span class="status pending">In Transit</span></td>
+                            <td class="font-bold">Rs. 18,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<script src="../assets/js/products.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/search.js"></script>
+</body>
+</html>

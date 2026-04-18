@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Page Not Found | KickUpNepal</title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../assets/css/variables.css"/>
+    <link rel="stylesheet" href="../assets/css/global.css"/>
+    <link rel="stylesheet" href="../assets/css/layout.css"/>
+    <link rel="stylesheet" href="../assets/css/components.css"/>
+    
+    <style>
+        .error-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--color-surface);
+        }
+        
+        .error-code {
+            font-size: clamp(6rem, 20vw, 12rem);
+            font-family: var(--font-headline);
+            font-weight: 900;
+            color: var(--color-surface-border);
+            line-height: 1;
+            position: absolute;
+            z-index: 0;
+            user-select: none;
+        }
+
+        .error-content {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+        }
+
+        .error-content img {
+            max-width: 300px;
+            margin: 0 auto 2rem auto;
+            transform: rotate(-10deg);
+            filter: drop-shadow(0 20px 20px rgba(0,0,0,0.1));
+        }
+
+        .error-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<main class="error-layout">
+    <div class="error-code">404</div>
+    
+    <div class="error-content">
+        <img src="../assets/images/products/g.png" alt="Missing Shoe"/>
+        
+        <h1 class="font-black">Looks like you took a wrong step.</h1>
+        <p class="text-muted mb-8 text-lg">
+            The exclusive drop you are looking for doesn't exist or has been moved.
+        </p>
+        
+        <a href="../index.html" class="btn btn-primary btn-lg inline-flex items-center gap-2">
+            <span class="material-symbols-outlined">home</span>
+            Back to Homepage
+        </a>
+    </div>
+</main>
+
+<script src="../assets/js/products.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/search.js"></script>
+</body>
+</html>

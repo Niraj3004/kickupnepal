@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Product Details | KickUpNepal</title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../assets/css/variables.css"/>
+    <link rel="stylesheet" href="../assets/css/global.css"/>
+    <link rel="stylesheet" href="../assets/css/layout.css"/>
+    <link rel="stylesheet" href="../assets/css/components.css"/>
+
+    <style>
+        .pdp-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; padding: 2rem 0 6rem; }
+        @media(min-width: 1024px) { .pdp-grid { grid-template-columns: 1.1fr 1fr; } }
+        
+        .pdp-gallery { position: sticky; top: 120px; height: fit-content; }
+        .main-img-wrap { 
+            background: #f8fafc; 
+            border-radius: 24px; 
+            padding: 4rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+            border: 1px solid var(--color-surface-border); 
+            min-height: 500px;
+            position: relative;
+        }
+        .main-img-wrap img { width: 100%; object-fit: contain; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .main-img-wrap:hover img { transform: scale(1.08) rotate(-2deg); }
+        
+        .thumb-grid { display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center; }
+        .thumb-btn { 
+            width: 80px; 
+            height: 80px; 
+            background: white; 
+            border-radius: 12px; 
+            border: 2px solid transparent; 
+            cursor: pointer; 
+            overflow: hidden; 
+            padding: 0.5rem; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+        .thumb-btn.active { border-color: var(--color-nepal-red); transform: translateY(-3px); }
+        .thumb-btn img { width: 100%; height: 100%; object-fit: contain; }
+        
+        .pdp-brand { color: var(--color-nepal-red); font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; margin-bottom: 0.75rem; }
+        .pdp-title { font-size: 3.5rem; font-weight: 950; line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+        .pdp-price { font-size: 2.25rem; font-weight: 900; margin-bottom: 2.5rem; color: var(--color-text-primary); }
+        
+        .size-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; margin-top: 1rem; margin-bottom: 2.5rem; }
+        .size-btn { border: 1px solid var(--color-surface-border); padding: 1rem 0; border-radius: 10px; font-weight: 700; cursor: pointer; background: white; transition: all 0.2s; font-size: 0.9rem; }
+        .size-btn:hover:not(.disabled) { border-color: var(--color-text-primary); background: #f8fafc; }
+        .size-btn.active { background: var(--color-text-primary); color: white; border-color: var(--color-text-primary); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .size-btn.disabled { opacity: 0.3; cursor: not-allowed; background: #f1f5f9; }
+        
+        .action-row { display: flex; gap: 1rem; margin-bottom: 3rem; }
+        .btn-pdp-cart { flex: 1; padding: 1.25rem; border-radius: 12px; font-weight: 900; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
+        .btn-wishlist { width: 64px; height: 64px; border-radius: 12px; border: 1.5px solid var(--color-surface-border); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; }
+        .btn-wishlist:hover { border-color: var(--color-nepal-red); color: var(--color-nepal-red); background: #fff1f2; }
+        
+        .pdp-trust { background: #f8faff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 2rem; margin-bottom: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .trust-item { display: flex; align-items: flex-start; gap: 1rem; }
+        .trust-item .material-symbols-outlined { color: var(--color-nepal-blue); font-size: 1.75rem; }
+        .trust-item h4 { font-weight: 800; font-size: 0.95rem; margin-bottom: 0.25rem; }
+        .trust-item p { font-size: 0.8rem; color: var(--color-text-secondary); line-height: 1.4; }
+
+        .pdp-tabs { border-top: 1px solid var(--color-surface-border); margin-top: 2rem; }
+        .tab-nav { display: flex; gap: 3rem; border-bottom: 2px solid #f1f5f9; }
+        .tab-link { padding: 1.25rem 0; font-weight: 800; cursor: pointer; position: relative; color: var(--color-text-muted); font-size: 1rem; transition: color 0.2s; }
+        .tab-link.active { color: var(--color-text-primary); }
+        .tab-link.active::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 3px; background: var(--color-nepal-red); border-radius: 3px 3px 0 0; }
+        .tab-content { padding: 2rem 0; line-height: 1.9; color: var(--color-text-secondary); font-size: 1.05rem; }
+
+        /* Related Products */
+        .related-section { border-top: 1px solid var(--color-surface-border); padding: 5rem 0 8rem; }
+        .related-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        @media(min-width: 768px) { .related-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        /* Spinner */
+        .pdp-loader { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
+        .spinner { width: 48px; height: 48px; border: 4px solid #f3f3f3; border-top: 4px solid var(--color-nepal-red); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+
+<!-- Top Promo Bar -->
+<div class="promo-bar">Authentic Heat 🔥 Fast Shipping Across Nepal - From Kathmandu to EBC!</div>
+
+<!-- Main Retail Header -->
+<header class="header-main">
+    <div class="container navbar-top">
+        <a href="../index.html" class="brand-logo">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></a>
+        <div class="nav-search">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Search for Jordans, Yeezys, Nike..."/>
+                <button class="search-btn material-symbols-outlined">search</button>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <a href="dashboard.html" class="action-item d-none md-flex"><span class="material-symbols-outlined">favorite</span><span>Wishlist</span></a>
+            <a href="dashboard.html" class="action-item" style="display:flex;align-items:center;gap:0.4rem;">
+                <div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:2px solid var(--color-nepal-red);flex-shrink:0;">
+                    <img src="../assets/images/users/user1.jpg" alt="Profile" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <span class="d-none sm-block" style="font-size:0.8rem; font-weight:700;">My Account</span>
+            </a>
+            <a href="cart.html" class="action-item"><span class="material-symbols-outlined">shopping_cart</span><span>Cart</span><span class="cart-badge" style="background-color: var(--color-nepal-red);">0</span></a>
+        </div>
+    </div>
+    <div class="navbar-categories no-scrollbar">
+        <div class="categories-list">
+            <a href="shop.html" style="color: var(--color-nepal-red); font-weight: 800;">Aago Deals 🔥</a>
+            <a href="shop.html">New Arrivals</a>
+            <div class="has-mega-menu">
+                <a href="shop.html" style="cursor: pointer; position: relative; padding-bottom: 0.75rem;">Sneakers <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">expand_more</span></a>
+                <div class="mega-menu">
+                    <div class="mega-menu-inner">
+                        <div class="mega-menu-column"><h4>Nike</h4><a href="shop.html">Air Force 1</a><a href="shop.html">Air Max 90</a><a href="shop.html">Dunk Low</a></div>
+                        <div class="mega-menu-column"><h4>Jordan</h4><a href="shop.html">Jordan 1 High</a><a href="shop.html">Jordan 4</a><a href="shop.html">Jordan 11</a></div>
+                        <div class="mega-menu-column"><h4>Adidas</h4><a href="shop.html">Yeezy Boost 350</a><a href="shop.html">Yeezy Slide</a><a href="shop.html">Samba Classic</a></div>
+                        <div class="mega-menu-column"><h4>New Balance</h4><a href="shop.html">550 Series</a><a href="shop.html">990v5 Core</a><a href="shop.html">2002R Protection</a></div>
+                    </div>
+                </div>
+            </div>
+            <a href="blog.html">Blog</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <div id="pdp-loader" class="pdp-loader">
+        <div class="spinner"></div>
+        <h3 class="font-black">Fetching Authentic Heat...</h3>
+    </div>
+
+    <div id="pdp-content" style="display:none;">
+        <nav class="breadcrumbs" style="padding: 2rem 0; font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted);">
+            <a href="../index.html" style="color: var(--color-text-primary);">Home</a> / 
+            <a href="shop.html" style="color: var(--color-text-primary);">Shop All</a> / 
+            <span id="bc-brand" style="text-transform: capitalize;"></span> / 
+            <span id="bc-name"></span>
+        </nav>
+
+        <div class="pdp-grid">
+            <div class="pdp-gallery">
+                <div class="main-img-wrap" id="main-img-btn">
+                    <img id="main-img" src="" alt="Main Product">
+                </div>
+                <div class="thumb-grid" id="thumb-grid"></div>
+            </div>
+
+            <div class="pdp-info">
+                <div class="pdp-brand" id="pdp-brand"></div>
+                <h1 class="pdp-title" id="pdp-title"></h1>
+                <p id="pdp-colorway" class="font-bold text-muted mb-6"></p>
+                <div class="pdp-price" id="pdp-price"></div>
+
+                <div class="size-section">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="font-black text-sm uppercase letter-spacing-wide">Select Size (US Mens)</span>
+                        <a href="#" class="text-xs font-bold text-nepal-blue underline">Size Guide</a>
+                    </div>
+                    <div class="size-grid" id="size-grid"></div>
+                </div>
+
+                <div class="action-row">
+                    <button id="add-to-cart-btn" class="btn btn-primary btn-pdp-cart">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        Add To Cart
+                    </button>
+                    <button class="btn-wishlist"><span class="material-symbols-outlined">favorite</span></button>
+                </div>
+
+                <div class="pdp-trust">
+                    <div class="trust-item">
+                        <span class="material-symbols-outlined">verified</span>
+                        <div><h4>Authentic Only</h4><p>Every pair is checked by our pros.</p></div>
+                    </div>
+                    <div class="trust-item">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                        <div><h4>Fast & Free</h4><p>Across all 77 districts of Nepal.</p></div>
+                    </div>
+                    <div class="trust-item">
+                        <span class="material-symbols-outlined">assignment_return</span>
+                        <div><h4>7D Return</h4><p>Easy returns if it doesn't fit.</p></div>
+                    </div>
+                    <div class="trust-item">
+                        <span class="material-symbols-outlined">lock</span>
+                        <div><h4>Secure Play</h4><p>eSewa, Khalti or Cash on Delivery.</p></div>
+                    </div>
+                </div>
+
+                <div class="pdp-tabs">
+                    <div class="tab-nav">
+                        <div class="tab-link active" onclick="switchTab(this, 'desc')">Description</div>
+                        <div class="tab-link" onclick="switchTab(this, 'shipping')">Shipping</div>
+                        <div class="tab-link" onclick="switchTab(this, 'auth')">Authenticity</div>
+                    </div>
+                    <div class="tab-content" id="tab-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <section class="related-section">
+            <div class="related-header">
+                <h2 class="text-4xl font-black">You Might Also Like</h2>
+                <a href="shop.html" class="btn" style="padding: 0.5rem 1.5rem; text-decoration: none; font-weight: 800;">View All →</a>
+            </div>
+            <div class="related-grid" id="related-grid"></div>
+        </section>
+    </div>
+</main>
+
+<!-- Fat Footer Mega Retail -->
+<footer>
+    <div class="container">
+        <!-- Newsletter inside footer -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center" style="margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid #dee2e6;">
+            <div>
+                <h3 class="text-2xl font-black mb-2">Subscribe to our Newsletter</h3>
+                <p class="text-muted text-sm">Get the latest sneaker news and 10% off your first order.</p>
+            </div>
+            <div class="flex gap-2">
+                <input type="email" placeholder="Your Email Address" style="flex:1; padding: 0.75rem 1rem; border: 1px solid #ced4da; border-radius: 4px;"/>
+                <button class="btn btn-accent" style="padding: 0.75rem 2rem;">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>CUSTOMER SERVICE</h4>
+                <div class="footer-links">
+                    <a href="help.html">Help Center</a>
+                    <a href="track-order.html">Track Order</a>
+                    <a href="returns.html">Return Policy</a>
+                    <a href="shipping.html">Shipping Inside Nepal</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>COMPANY INFO</h4>
+                <div class="footer-links">
+                    <a href="about.html">About KickUpNepal</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="store-locator.html">Store Locator</a>
+                    <a href="authenticity.html">Authenticity Guarantee</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>TOP CATEGORIES</h4>
+                <div class="footer-links">
+                    <a href="shop.html">Air Jordan</a>
+                    <a href="shop.html">Nike Dunk</a>
+                    <a href="shop.html">Yeezy</a>
+                    <a href="shop.html">New Balance</a>
+                </div>
+            </div>
+            
+            <div class="footer-col" style="text-align: right;">
+                 <h2 class="font-black text-3xl mb-2">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></h2>
+                 <p class="text-sm text-muted mb-4">The #1 Platform for Authentic Sneakers in Nepal.</p>
+            
+                 <div style="margin-top: 2rem; display: inline-block; text-align: left;">
+                      <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem;">We Accept</h4>
+                      <div style="display: flex; gap: 0.75rem; align-items: center;">
+                          <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; width: 64px; height: 40px; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                              <img src="../assets/images/design/esewa.png" alt="eSewa" style="height: 18px; object-fit: contain;">
+                          </div>
+                          <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; width: 64px; height: 40px; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                              <img src="../assets/images/design/khalti.png" alt="Khalti" style="height: 18px; object-fit: contain;">
+                          </div>
+                          <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; width: 64px; height: 40px; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                              <img src="../assets/images/design/pngegg.png" alt="Cards" style="height: 20px; object-fit: contain;">
+                          </div>
+                      </div>
+                 </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="fb-inner container" style="display: flex; justify-content: center; align-items: center; padding: 1rem 0;">
+                <div style="color: var(--color-text-muted);">© 2024 KickUpNepal Pvt. Ltd. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../assets/js/products.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/search.js"></script>
+<script src="../assets/js/main.js"></script>
+
+<script>
+    let currentProduct = null;
+    let selectedSize = '9';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get('id')) || 1;
+        currentProduct = KUN_PRODUCTS.find(p => p.id === id);
+
+        if (!currentProduct) {
+            document.getElementById('pdp-loader').innerHTML = '<h2 class="text-2xl font-black">Shoe Not Found :(</h2><a href="shop.html" class="btn btn-primary mt-4">Back to Shop</a>';
+            return;
+        }
+
+        // Fill Content
+        document.getElementById('bc-brand').textContent = currentProduct.brand;
+        document.getElementById('bc-name').textContent = currentProduct.name;
+        document.getElementById('pdp-brand').textContent = currentProduct.brand;
+        document.getElementById('pdp-title').textContent = currentProduct.name;
+        document.getElementById('pdp-colorway').textContent = `Colorway: ${currentProduct.colorway || 'Original Heritage'}`;
+        document.getElementById('pdp-price').textContent = `Rs. ${currentProduct.price.toLocaleString()}`;
+        document.getElementById('main-img').src = currentProduct.image;
+        document.getElementById('tab-content').innerHTML = currentProduct.description || 'Elevate your daily rotation with this premium silhouette. Hand-picked and verified for authenticity, this pair features iconic design lines and superior materials that stand the test of time.';
+
+        // Thumbs
+        const thumbGrid = document.getElementById('thumb-grid');
+        const images = [currentProduct.image, currentProduct.image]; // Add more if product.js had them
+        thumbGrid.innerHTML = images.map((img, i) => `
+            <button class="thumb-btn ${i===0?'active':''}" onclick="changeImg(this, '${img}', ${i===1})">
+                <img src="${img}" style="${i===1?'transform: scaleX(-1)':''}">
+            </button>
+        `).join('');
+
+        // Sizes
+        const sizes = [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 12, 13];
+        document.getElementById('size-grid').innerHTML = sizes.map(s => `
+            <button class="size-btn ${s==9?'active':''}" onclick="selectSize(this, '${s}')">${s}</button>
+        `).join('');
+
+        // Related
+        const related = KUN_PRODUCTS.filter(p => p.brand === currentProduct.brand && p.id !== currentProduct.id).slice(0, 4);
+        document.getElementById('related-grid').innerHTML = related.map(p => `
+            <div class="product-card" onclick="window.location='product.html?id=${p.id}'">
+                <div class="product-card-img"><img src="${p.image}" alt="${p.name}"></div>
+                <div class="product-card-info">
+                    <div class="brand-tag">${p.brand}</div>
+                    <h3 class="product-name">${p.name}</h3>
+                    <div class="product-price">Rs. ${p.price.toLocaleString()}</div>
+                </div>
+            </div>
+        `).join('');
+
+        // Add to Cart
+        document.getElementById('add-to-cart-btn').onclick = () => {
+            KUNCart.add(currentProduct.id, selectedSize);
+        };
+
+        // Show Content
+        setTimeout(() => {
+            document.getElementById('pdp-loader').style.display = 'none';
+            document.getElementById('pdp-content').style.display = 'block';
+        }, 600);
+    });
+
+    function changeImg(btn, src, flipped) {
+        document.querySelectorAll('.thumb-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const main = document.getElementById('main-img');
+        main.src = src;
+        main.style.transform = flipped ? 'scaleX(-1)' : 'scaleX(1)';
+    }
+
+    function selectSize(btn, size) {
+        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedSize = size;
+    }
+
+    function switchTab(btn, tab) {
+        document.querySelectorAll('.tab-link').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const content = document.getElementById('tab-content');
+        if(tab === 'desc') content.innerHTML = currentProduct.description || 'Elevate your daily rotation with this premium silhouette.';
+        if(tab === 'shipping') content.innerHTML = '<strong>Free Shipping:</strong> Inside Kathmandu (1-2 Days), Outside KTM (2-5 Days). We ship with Pathao and eDaraz across all 77 districts of Nepal.';
+        if(tab === 'auth') content.innerHTML = '<strong>Guaranteed Authentic:</strong> Every sneaker on KickUpNepal is verified by our specialist team. We use multiple check-points including UV light, material touch, and brand-ID verification.';
+    }
+</script>
+</body>
+</html>

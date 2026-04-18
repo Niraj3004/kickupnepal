@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>KickUpNepal | The Ultimate Sneaker Destination in Nepal</title>
+    <meta name="description" content="Shop authentic sneakers in Nepal. Jordan, Nike, Yeezy, New Balance — delivered across Nepal. eSewa, Khalti &amp; COD accepted."/>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="assets/css/variables.css"/>
+    <link rel="stylesheet" href="assets/css/global.css"/>
+    <link rel="stylesheet" href="assets/css/layout.css"/>
+    <link rel="stylesheet" href="assets/css/components.css"/>
+
+    <style>
+        .horizontal-scroller {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 2rem;
+            padding-top: 1rem;
+        }
+        .promo-bar {
+            background-color: var(--color-nepal-blue);
+            color: var(--color-white);
+        }
+        .vip-banner {
+            background: linear-gradient(135deg, #003893 0%, #DC143C 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        .vip-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            color: white;
+        }
+        .lookbook-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Promo Bar -->
+<div class="promo-bar">
+    Authentic Heat 🔥 Fast Shipping Across Nepal - From Kathmandu to EBC!
+</div>
+
+<!-- Main Retail Header -->
+<header class="header-main">
+    <div class="container navbar-top">
+        <a href="index.html" class="brand-logo">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></a>
+        
+        <div class="nav-search">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Search for Jordans, Yeezys, Nike..."/>
+                <button class="search-btn material-symbols-outlined">search</button>
+            </div>
+        </div>
+        
+        <div class="nav-actions">
+            <a href="pages/dashboard.html" class="action-item d-none md-flex">
+                <span class="material-symbols-outlined">favorite</span>
+                <span>Wishlist</span>
+            </a>
+            <a href="pages/dashboard.html" class="action-item" style="display:flex;align-items:center;gap:0.4rem;">
+                <div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:2px solid var(--color-nepal-red);flex-shrink:0;">
+                    <img src="assets/images/users/user1.jpg" alt="Profile" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <span style="font-size:0.8rem;">My Account</span>
+            </a>
+            <a href="pages/dashboard.html" class="action-item">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span>Cart</span>
+                <span class="cart-badge" style="background-color: var(--color-nepal-red);">3</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="navbar-categories no-scrollbar">
+        <div class="categories-list">
+            <a href="pages/shop.html" style="color: var(--color-nepal-red); font-weight: 800;">Aago Deals 🔥</a>
+            <a href="pages/shop.html">New Arrivals</a>
+            
+            <div class="has-mega-menu">
+                <a href="pages/shop.html" style="cursor: pointer; position: relative; padding-bottom: 0.75rem;">Sneakers <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">expand_more</span></a>
+                <div class="mega-menu">
+                    <div class="mega-menu-inner">
+                        <div class="mega-menu-column">
+                            <h4>Nike</h4>
+                            <a href="pages/shop.html">Air Force 1</a>
+                            <a href="pages/shop.html">Air Max 90</a>
+                            <a href="pages/shop.html">Dunk Low</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Jordan</h4>
+                            <a href="pages/shop.html">Jordan 1 High</a>
+                            <a href="pages/shop.html">Jordan 4</a>
+                            <a href="pages/shop.html">Jordan 11</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Adidas</h4>
+                            <a href="pages/shop.html">Yeezy Boost 350</a>
+                            <a href="pages/shop.html">Yeezy Slide</a>
+                            <a href="pages/shop.html">Samba Classic</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>New Balance</h4>
+                            <a href="pages/shop.html">550 Series</a>
+                            <a href="pages/shop.html">990v5 Core</a>
+                            <a href="pages/shop.html">2002R Protection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="pages/blog.html">Blog</a>
+            <a href="pages/about.html">About Us</a>
+            <a href="pages/contact.html">Contact Us</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- HERO CAROUSEL -->
+    <section class="hero-carousel-wrapper">
+        <div class="hero-carousel">
+            <div class="carousel-track" id="hero-track">
+
+                <!-- Slide 1 -->
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+                    <div class="slide-content-text">
+                        <span class="badge" style="background-color: var(--color-nepal-red); color: white; margin-bottom: 1rem; display: inline-block;">End of Season Sale</span>
+                        <h1 class="text-6xl font-black mb-4">
+                            Up to <span style="color: var(--color-nepal-blue);">50% OFF</span>
+                        </h1>
+                        <p class="text-xl text-muted mb-8" style="max-width: 400px;">
+                            The biggest sneaker clearance in Nepal. Authentic kicks, unbeatable prices.
+                        </p>
+                        <a href="pages/shop.html" class="btn btn-primary btn-lg" style="text-decoration: none; padding: 1rem 3rem;">Shop The Sale</a>
+                    </div>
+                    <div class="slide-content-image">
+                        <img src="assets/images/products/a.png" alt="Air Jordan 1" style="transform: rotate(-15deg);"/>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);">
+                    <div class="slide-content-text">
+                        <span class="badge" style="background-color: #000; color: white; margin-bottom: 1rem; display: inline-block;">New Arrival</span>
+                        <h1 class="text-6xl font-black mb-4">
+                            Yeezy Boost <span style="color: #64748b;">350</span>
+                        </h1>
+                        <p class="text-xl text-muted mb-8" style="max-width: 400px;">
+                            The hype is real. Secure your pair of the highly anticipated Bone colorway.
+                        </p>
+                        <a href="pages/shop.html" class="btn btn-accent btn-lg" style="text-decoration: none; padding: 1rem 3rem;">Buy Now</a>
+                    </div>
+                    <div class="slide-content-image">
+                        <img src="assets/images/products/g.png" alt="Yeezy Boost 350"/>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%); border-bottom: 3px solid var(--color-nepal-blue);">
+                    <div class="slide-content-text">
+                        <span class="badge" style="background-color: var(--color-nepal-blue); color: white; margin-bottom: 1rem; display: inline-block;">Exclusive Release</span>
+                        <h1 class="text-6xl font-black mb-4">Nike Dunk Low</h1>
+                        <p class="text-xl text-muted mb-8" style="max-width: 400px;">
+                            The Panda Dunk Low. The most coveted Nike colourway of the decade. Now in Nepal.
+                        </p>
+                        <a href="pages/shop.html" class="btn btn-primary btn-lg" style="text-decoration: none; padding: 1rem 3rem; background-color: var(--color-nepal-blue); border-color: var(--color-nepal-blue);">Explore Collection</a>
+                    </div>
+                    <div class="slide-content-image">
+                        <img src="assets/images/products/f.png" alt="Nike Dunk Low" style="transform: rotate(5deg);"/>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-btn prev-btn" id="hero-prev"><span class="material-symbols-outlined">chevron_left</span></button>
+            <button class="carousel-btn next-btn" id="hero-next"><span class="material-symbols-outlined">chevron_right</span></button>
+
+            <div class="carousel-dots" id="hero-dots">
+                <div class="carousel-dot active" data-index="0"></div>
+                <div class="carousel-dot" data-index="1"></div>
+                <div class="carousel-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Ribbon -->
+    <section class="trust-ribbon">
+        <div class="container grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="trust-item">
+                <span class="material-symbols-outlined">local_shipping</span>
+                <div class="trust-text"><h4>Free Delivery</h4><p>All over Nepal</p></div>
+            </div>
+            <div class="trust-item">
+                <span class="material-symbols-outlined">verified</span>
+                <div class="trust-text"><h4>100% Authentic</h4><p>Verified Original</p></div>
+            </div>
+            <div class="trust-item">
+                <span class="material-symbols-outlined">sync</span>
+                <div class="trust-text"><h4>Easy Returns</h4><p>7 Days Policy</p></div>
+            </div>
+            <div class="trust-item">
+                <span class="material-symbols-outlined">security</span>
+                <div class="trust-text"><h4>Secure Payment</h4><p>eSewa / Khalti / COD</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Looping Brands -->
+    <section class="brand-marquee-section">
+        <div class="container">
+            <h3 class="text-center font-bold text-muted mb-8 text-sm uppercase" style="letter-spacing: 0.15em;">Partners &amp; Official Retailers</h3>
+            <div class="brand-marquee-container">
+                <div class="brand-marquee-track">
+                    <img src="assets/images/brand/1.png" class="brand-logo-item" alt="Brand 1"/>
+                    <img src="assets/images/brand/2.png" class="brand-logo-item" alt="Brand 2"/>
+                    <img src="assets/images/brand/3.png" class="brand-logo-item" alt="Brand 3"/>
+                    <img src="assets/images/brand/4.png" class="brand-logo-item" alt="Brand 4"/>
+                    <img src="assets/images/brand/newbalance.png" class="brand-logo-item" alt="New Balance"/>
+                    <img src="assets/images/brand/vans.png" class="brand-logo-item" alt="Vans"/>
+                </div>
+                <div class="brand-marquee-track" aria-hidden="true">
+                    <img src="assets/images/brand/1.png" class="brand-logo-item" alt="Brand 1"/>
+                    <img src="assets/images/brand/2.png" class="brand-logo-item" alt="Brand 2"/>
+                    <img src="assets/images/brand/3.png" class="brand-logo-item" alt="Brand 3"/>
+                    <img src="assets/images/brand/4.png" class="brand-logo-item" alt="Brand 4"/>
+                    <img src="assets/images/brand/newbalance.png" class="brand-logo-item" alt="New Balance"/>
+                    <img src="assets/images/brand/vans.png" class="brand-logo-item" alt="Vans"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Bento Grid -->
+    <section class="container" style="padding-top: 5rem; padding-bottom: 2rem;">
+        <div class="text-center mb-8">
+            <h2 class="section-title">Shop By Style</h2>
+            <p class="section-subtitle">Find your perfect pair from Nepal's biggest collection</p>
+        </div>
+        <div class="category-bento">
+            <a href="pages/shop.html" class="bento-item bento-large">
+                <img src="assets/images/products/a.png" alt="Jordan" style="object-position: center 20%;"/>
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <h3 class="text-4xl font-black mb-2">Retro Heritage</h3>
+                    <p class="text-sm uppercase tracking-widest font-bold">Shop Air Jordan</p>
+                </div>
+            </a>
+            <a href="pages/shop.html" class="bento-item">
+                <img src="assets/images/products/g.png" alt="Yeezy"/>
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <h3 class="text-2xl font-black mb-1">The Hype</h3>
+                    <p class="text-xs uppercase tracking-widest font-bold">Shop Yeezy</p>
+                </div>
+            </a>
+            <a href="pages/shop.html" class="bento-item">
+                <img src="assets/images/products/d.png" alt="Nike"/>
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <h3 class="text-2xl font-black mb-1">Performance</h3>
+                    <p class="text-xs uppercase tracking-widest font-bold">Shop Nike</p>
+                </div>
+            </a>
+            <a href="pages/shop.html" class="bento-item" style="grid-column: span 2;">
+                <img src="assets/images/products/k.png" alt="Streetwear"/>
+                <div class="bento-overlay"></div>
+                <div class="bento-content">
+                    <h3 class="text-3xl font-black mb-1">Streetwear</h3>
+                    <p class="text-sm uppercase tracking-widest font-bold">Shop Apparel</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="container" style="padding-top: 5rem;">
+        <div class="text-center mb-4">
+            <h2 class="section-title">Shop by Category</h2>
+            <p class="section-subtitle">Find exactly what you're looking for</p>
+        </div>
+        <div class="filter-row">
+            <button class="filter-btn active" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="nike">Nike</button>
+            <button class="filter-btn" data-filter="jordan">Jordan</button>
+            <button class="filter-btn" data-filter="yeezy">Yeezy</button>
+            <button class="filter-btn" data-filter="apparel">Apparel</button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="filterable-grid">
+            <a href="pages/product.html" style="text-decoration: none;" class="product-card filterable-product" data-category="jordan">
+                <div class="product-badges"><span class="badge badge-sale">Restock</span></div>
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/a.png" alt="Air Jordan 1 Retro High OG"/>
+                    <div class="hover-actions">
+                        <button class="btn btn-primary" style="flex:1;">Quick View</button>
+                        <button class="btn btn-accent" style="flex:1;" data-add-cart="1" data-size="9">Add Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Jordan</div>
+                    <h3 class="product-title">Air Jordan 1 Retro High OG</h3>
+                    <div class="product-price-wrap">
+                        <span class="product-price">Rs. 24,000</span>
+                        <button class="btn-add-cart" data-add-cart="1" data-size="9"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    </div>
+                </div>
+            </a>
+            <div class="product-card filterable-product" data-category="nike">
+                <div class="product-badges"><span class="badge badge-exclusive" style="background-color: var(--color-nepal-blue);">New</span></div>
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/f.png" alt="Nike Dunk Low Panda"/>
+                    <div class="hover-actions">
+                        <button class="btn btn-primary" style="flex:1;">Quick View</button>
+                        <button class="btn btn-accent" style="flex:1;" data-add-cart="6" data-size="9">Add Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Nike</div>
+                    <h3 class="product-title">Nike Dunk Low Panda</h3>
+                    <div class="product-price-wrap">
+                        <span class="product-price">Rs. 16,500</span>
+                        <button class="btn-add-cart" data-add-cart="6" data-size="9"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card filterable-product" data-category="yeezy">
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/g.png" alt="Yeezy Boost 350 Bone"/>
+                    <div class="hover-actions">
+                        <button class="btn btn-primary" style="flex:1;">Quick View</button>
+                        <button class="btn btn-accent" style="flex:1;" data-add-cart="7" data-size="9">Add Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Yeezy</div>
+                    <h3 class="product-title">Yeezy Boost 350 V2 Bone</h3>
+                    <div class="product-price-wrap">
+                        <span class="product-price">Rs. 32,000</span>
+                        <button class="btn-add-cart" data-add-cart="7" data-size="9"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card filterable-product" data-category="apparel">
+                <div class="product-badges"><span class="badge" style="background-color: var(--color-nepal-blue);">Exclusive</span></div>
+                <div class="product-image-wrap">
+                    <img src="assets/images/products/k.png" alt="Essential Oversized Hoodie"/>
+                    <div class="hover-actions">
+                        <button class="btn btn-primary" style="flex:1;">Quick View</button>
+                        <button class="btn btn-accent" style="flex:1;" data-add-cart="11" data-size="M">Add Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">KickUpNepal</div>
+                    <h3 class="product-title">Essential Oversized Hoodie</h3>
+                    <div class="product-price-wrap">
+                        <span class="product-price">Rs. 4,500</span>
+                        <button class="btn-add-cart" data-add-cart="11" data-size="M"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aago Deals Flash Sale -->
+    <section class="section-bg-light" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container">
+            <div class="section-header" style="border-bottom: none; margin-bottom: 1rem; align-items: center;">
+                <div class="flex items-center gap-4 flex-wrap">
+                    <h2 class="section-title" style="margin: 0; display:flex; align-items: center; color: var(--color-nepal-red);">
+                        <span class="material-symbols-outlined" style="font-size: 2.5rem; margin-right: 0.5rem;">local_fire_department</span>
+                        Aago Deals
+                    </h2>
+                    <div class="timer-box ml-4">
+                        <span class="text-sm font-bold">Ends In:</span>
+                        <div class="timer-item" id="t-hours">05</div>:
+                        <div class="timer-item" id="t-mins">59</div>:
+                        <div class="timer-item" id="t-secs">00</div>
+                    </div>
+                </div>
+                <a href="pages/shop.html" class="text-sm font-bold" style="color: var(--color-nepal-blue); white-space: nowrap;">View All</a>
+            </div>
+            <div class="horizontal-scroller no-scrollbar" id="slider-container">
+                <a href="pages/product.html" style="text-decoration:none; min-width:250px; max-width:250px;" class="product-card">
+                    <div class="product-badges"><span class="badge badge-sale">-20% OFF</span></div>
+                    <div class="product-image-wrap"><img src="assets/images/products/b.png" alt="Air Jordan 1 Low Pink"/></div>
+                    <div class="product-info">
+                        <div class="product-brand">Jordan</div>
+                        <h3 class="product-title">Air Jordan 1 Low Pink</h3>
+                        <div class="product-price-wrap" style="gap:0.5rem;">
+                            <span class="product-price">Rs. 19,500</span>
+                            <span class="product-price-old">Rs. 24,000</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="product-card" style="min-width:250px; max-width:250px;">
+                    <div class="product-badges"><span class="badge badge-sale">-15% OFF</span></div>
+                    <div class="product-image-wrap"><img src="assets/images/products/d.png" alt="Nike Cloudrunner"/></div>
+                    <div class="product-info">
+                        <div class="product-brand">Nike</div>
+                        <h3 class="product-title">Cloudrunner X Neon Pack</h3>
+                        <div class="product-price-wrap" style="gap:0.5rem;">
+                            <span class="product-price">Rs. 18,500</span>
+                            <span class="product-price-old">Rs. 21,500</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" style="min-width:250px; max-width:250px;">
+                    <div class="product-badges"><span class="badge badge-sale">-30% OFF</span></div>
+                    <div class="product-image-wrap"><img src="assets/images/products/j.png" alt="Asics Apex"/></div>
+                    <div class="product-info">
+                        <div class="product-brand">Asics</div>
+                        <h3 class="product-title">Apex Utility Titanium</h3>
+                        <div class="product-price-wrap" style="gap:0.5rem;">
+                            <span class="product-price" style="color:var(--color-nepal-red);">Rs. 31,000</span>
+                            <span class="product-price-old">Rs. 44,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" style="min-width:250px; max-width:250px;">
+                    <div class="product-badges"><span class="badge badge-sale">-20% OFF</span></div>
+                    <div class="product-image-wrap"><img src="assets/images/products/h.png" alt="Yeezy Slide"/></div>
+                    <div class="product-info">
+                        <div class="product-brand">Adidas</div>
+                        <h3 class="product-title">Yeezy Slide</h3>
+                        <div class="product-price-wrap" style="gap:0.5rem;">
+                            <span class="product-price">Rs. 12,000</span>
+                            <span class="product-price-old">Rs. 15,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" style="min-width:250px; max-width:250px;">
+                    <div class="product-badges"><span class="badge badge-sale">-10% OFF</span></div>
+                    <div class="product-image-wrap"><img src="assets/images/products/n.png" alt="Adidas Samba"/></div>
+                    <div class="product-info">
+                        <div class="product-brand">Adidas</div>
+                        <h3 class="product-title">Adidas Samba Classic</h3>
+                        <div class="product-price-wrap" style="gap:0.5rem;">
+                            <span class="product-price">Rs. 13,500</span>
+                            <span class="product-price-old">Rs. 15,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Screen Feature -->
+    <section class="split-feature">
+        <div class="split-image">
+            <img src="assets/images/products/o.png" alt="Jordan 11 Bred"/>
+        </div>
+        <div class="split-text">
+            <h4 class="text-sm uppercase font-bold text-muted mb-2 tracking-widest">Limited Release</h4>
+            <h2 class="text-5xl font-black mb-6" style="line-height: 1.1;">Jordan 11<br/>Retro Bred</h2>
+            <p class="text-lg text-muted mb-8" style="max-width: 400px;">
+                The most iconic Jordan ever made. Black patent leather, carbon fibre plate, and Jumpman branding. Limited pairs available in Nepal.
+            </p>
+            <a href="pages/shop.html" class="btn btn-primary btn-lg" style="align-self: flex-start; text-decoration: none;">Shop The Drop</a>
+        </div>
+    </section>
+
+    <!-- Promo Tiles -->
+    <section class="container" style="padding-top: 3rem;">
+        <div class="grid md:grid-cols-2 gap-6" style="height: 350px;">
+            <a href="pages/shop.html" class="promo-tile">
+                <img src="assets/images/products/k.png" alt="Streetwear"/>
+                <div class="promo-content">
+                    <h3 class="text-3xl font-black mb-2 text-white">Streetwear Essentials</h3>
+                    <p class="mb-4 text-white">Complete your look with our curated apparel.</p>
+                </div>
+            </a>
+            <a href="pages/shop.html" class="promo-tile">
+                <img src="assets/images/products/i.png" alt="New Balance 550"/>
+                <div class="promo-content">
+                    <h3 class="text-3xl font-black mb-2 text-white">New Balance 550</h3>
+                    <p class="mb-4 text-white">The sneaker that took over the world.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Lookbook Feed -->
+    <section class="container" style="padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="text-center mb-8">
+            <h2 class="section-title">Seen In The Streets</h2>
+            <p class="section-subtitle">Tag @KickUpNepal to be featured</p>
+        </div>
+        <div class="lookbook-grid">
+            <div class="lookbook-item">
+                <img src="assets/images/products/c.png" alt="Look 1"/>
+                <div class="lookbook-overlay"><span class="material-symbols-outlined text-white" style="font-size:3rem;">favorite</span></div>
+            </div>
+            <div class="lookbook-item">
+                <img src="assets/images/products/e.png" alt="Look 2"/>
+                <div class="lookbook-overlay"><span class="material-symbols-outlined text-white" style="font-size:3rem;">favorite</span></div>
+            </div>
+            <div class="lookbook-item">
+                <img src="assets/images/products/m.png" alt="Look 3"/>
+                <div class="lookbook-overlay"><span class="material-symbols-outlined text-white" style="font-size:3rem;">favorite</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Newsletter Banner -->
+    <section class="vip-banner">
+        <div class="vip-content">
+            <h2 class="text-5xl font-black mb-4">Never Miss A Drop.</h2>
+            <p class="text-lg mb-8" style="opacity: 0.9;">Join the KickUpNepal VIP list for exclusive early access to ultra-rare releases, restocks, and streetwear capsules.</p>
+            <div class="flex gap-2 justify-center mx-auto" style="max-width: 500px;">
+                <input type="email" placeholder="Your Email Address" class="input-premium" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: white; border-radius: 99px;"/>
+                <button class="btn btn-accent" style="border-radius: 99px; white-space: nowrap;">Join Waitlist</button>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Fat Footer Mega Retail -->
+<footer>
+    <div class="container">
+        <!-- Newsletter inside footer -->
+        <div class="grid lg:grid-cols-2 gap-8 items-center" style="margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid #dee2e6;">
+            <div>
+                <h3 class="text-2xl font-black mb-2">Subscribe to our Newsletter</h3>
+                <p class="text-muted text-sm">Get the latest sneaker news and 10% off your first order.</p>
+            </div>
+            <div class="flex gap-2">
+                <input type="email" placeholder="Your Email Address" style="flex:1; padding: 0.75rem 1rem; border: 1px solid #ced4da; border-radius: 4px;"/>
+                <button class="btn btn-accent" style="padding: 0.75rem 2rem;">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>CUSTOMER SERVICE</h4>
+                <div class="footer-links">
+                    <a href="pages/help.html">Help Center</a>
+                    <a href="pages/track-order.html">Track Order</a>
+                    <a href="pages/returns.html">Return Policy</a>
+                    <a href="pages/shipping.html">Shipping Inside Nepal</a>
+                    <a href="pages/contact.html">Contact Us</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>COMPANY INFO</h4>
+                <div class="footer-links">
+                    <a href="pages/about.html">About KickUpNepal</a>
+                    <a href="pages/careers.html">Careers</a>
+                    <a href="pages/store-locator.html">Store Locator (Kathmandu)</a>
+                    <a href="pages/authenticity.html">Authenticity Guarantee</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>TOP CATEGORIES</h4>
+                <div class="footer-links">
+                    <a href="#">Air Jordan</a>
+                    <a href="#">Nike Dunk</a>
+                    <a href="#">Yeezy</a>
+                    <a href="#">New Balance</a>
+                </div>
+            </div>
+            
+            <div class="footer-col" style="text-align: right;">
+                 <h2 class="font-black text-3xl mb-2">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></h2>
+                 <p class="text-sm text-muted mb-4">The #1 Platform for Authentic Sneakers in Nepal.</p>
+            
+     <div style="margin-top: 2rem; display: inline-block; text-align: left;">
+          <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--color-text-primary);">We Accept</h4>
+          <div style="display: flex; gap: 0.75rem; align-items: center;">
+              <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; width: 64px; height: 40px; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                  <img src="assets/images/design/esewa.png" alt="eSewa" style="height: 18px; object-fit: contain;">
+              </div>
+              <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; width: 64px; height: 40px; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                  <img src="assets/images/design/khalti.png" alt="Khalti" style="height: 18px; object-fit: contain;">
+              </div>
+              <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; width: 64px; height: 40px; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                  <img src="assets/images/design/pngegg.png" alt="Cards" style="height: 20px; object-fit: contain;">
+              </div>
+          </div>
+     </div>
+     
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            
+        
+            <div class="fb-inner container" style="display: flex; justify-content: center; align-items: center; padding: 1rem 0;">
+                <div style="color: var(--color-text-muted);">© 2024 KickUpNepal Pvt. Ltd. All Rights Reserved.</div>
+            </div>
+        
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/slider.js"></script>
+<script>
+    // Live countdown timer for Aago Deals
+    (function(){
+        const end = Date.now() + (5*3600 + 59*60) * 1000;
+        function tick(){
+            const rem = Math.max(0, end - Date.now());
+            const h = String(Math.floor(rem/3600000)).padStart(2,'0');
+            const m = String(Math.floor((rem%3600000)/60000)).padStart(2,'0');
+            const s = String(Math.floor((rem%60000)/1000)).padStart(2,'0');
+            const hEl = document.getElementById('t-hours');
+            const mEl = document.getElementById('t-mins');
+            const sEl = document.getElementById('t-secs');
+            if(hEl) hEl.textContent = h;
+            if(mEl) mEl.textContent = m;
+            if(sEl) sEl.textContent = s;
+            if(rem > 0) setTimeout(tick, 1000);
+        }
+        tick();
+    })();
+</script>
+</body>
+</html>

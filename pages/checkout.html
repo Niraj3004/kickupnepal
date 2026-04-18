@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Secure Checkout | KickUpNepal</title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../assets/css/variables.css"/>
+    <link rel="stylesheet" href="../assets/css/global.css"/>
+    <link rel="stylesheet" href="../assets/css/layout.css"/>
+    <link rel="stylesheet" href="../assets/css/components.css"/>
+    
+    <style>
+        .checkout-grid {
+            display: grid;
+            gap: 4rem;
+            grid-template-columns: 1fr;
+            padding: 2rem 0 6rem 0;
+        }
+
+        @media (min-width: 1024px) {
+            .checkout-grid {
+                grid-template-columns: 1fr 400px;
+            }
+        }
+
+        .checkout-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-surface-border);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        /* Form Layout */
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .form-row > * {
+            flex: 1;
+        }
+
+        /* Payment Methods */
+        .payment-methods {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .payment-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem;
+            border: 1px solid var(--color-surface-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .payment-label:hover {
+            border-color: var(--color-text-primary);
+        }
+
+        .payment-label input[type="radio"] {
+            accent-color: var(--color-nepal-blue);
+            width: 18px;
+            height: 18px;
+            margin-right: 1rem;
+        }
+
+        .payment-name {
+            font-weight: 700;
+            flex: 1;
+        }
+
+        /* Summary Sidebar */
+        .summary-sidebar {
+            background-color: var(--color-surface);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            height: fit-content;
+        }
+
+        .summary-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .si-img {
+            width: 60px;
+            height: 60px;
+            background: var(--color-bg);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--color-surface-border);
+            position: relative;
+        }
+        .si-img img { width: 80%; }
+        .si-qty {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--color-text-primary);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 50%;
+        }
+
+        .si-details {
+            flex: 1;
+        }
+
+        .si-title { font-weight: 700; font-size: 0.875rem; }
+        .si-price { font-weight: 700; }
+    </style>
+</head>
+<body>
+
+<!-- Top Promo Bar -->
+<div class="promo-bar">
+    Authentic Heat 🔥 Fast Shipping Across Nepal - From Kathmandu to EBC!
+</div>
+
+<!-- Main Retail Header -->
+<header class="header-main">
+    <div class="container navbar-top">
+        <a href="../index.html" class="brand-logo">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></a>
+        
+        <div class="nav-search">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Search for Jordans, Yeezys, Nike..."/>
+                <button class="search-btn material-symbols-outlined">search</button>
+            </div>
+        </div>
+        
+        <div class="nav-actions">
+            <a href="../pages/dashboard.html" class="action-item d-none md-flex">
+                <span class="material-symbols-outlined">favorite</span>
+                <span>Wishlist</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item" style="display:flex;align-items:center;gap:0.4rem;">
+                <div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:2px solid var(--color-nepal-red);flex-shrink:0;">
+                    <img src="../assets/images/users/user1.jpg" alt="Profile" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <span style="font-size:0.8rem;">My Account</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span>Cart</span>
+                <span class="cart-badge" style="background-color: var(--color-nepal-red);">3</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="navbar-categories no-scrollbar">
+        <div class="categories-list">
+            <a href="../pages/shop.html" style="color: var(--color-nepal-red); font-weight: 800;">Aago Deals 🔥</a>
+            <a href="../pages/shop.html">New Arrivals</a>
+            
+            <div class="has-mega-menu">
+                <a href="../pages/shop.html" style="cursor: pointer; position: relative; padding-bottom: 0.75rem;">Sneakers <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">expand_more</span></a>
+                <div class="mega-menu">
+                    <div class="mega-menu-inner">
+                        <div class="mega-menu-column">
+                            <h4>Nike</h4>
+                            <a href="../pages/shop.html">Air Force 1</a>
+                            <a href="../pages/shop.html">Air Max 90</a>
+                            <a href="../pages/shop.html">Dunk Low</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Jordan</h4>
+                            <a href="../pages/shop.html">Jordan 1 High</a>
+                            <a href="../pages/shop.html">Jordan 4</a>
+                            <a href="../pages/shop.html">Jordan 11</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Adidas</h4>
+                            <a href="../pages/shop.html">Yeezy Boost 350</a>
+                            <a href="../pages/shop.html">Yeezy Slide</a>
+                            <a href="../pages/shop.html">Samba Classic</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>New Balance</h4>
+                            <a href="../pages/shop.html">550 Series</a>
+                            <a href="../pages/shop.html">990v5 Core</a>
+                            <a href="../pages/shop.html">2002R Protection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../pages/blog.html">Blog</a>
+            <a href="../pages/about.html">About Us</a>
+            <a href="../pages/contact.html">Contact Us</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <div class="checkout-grid">
+        <!-- Forms -->
+        <div>
+            <form action="order-success.html" method="GET">
+                <div class="checkout-section">
+                    <h2 class="section-title">1. Shipping Information</h2>
+                    
+                    <div class="form-row">
+                        <input type="text" class="input-premium" placeholder="First Name" required />
+                        <input type="text" class="input-premium" placeholder="Last Name" required />
+                    </div>
+                    <input type="text" class="input-premium" placeholder="Address Line 1" required style="margin-bottom: 1rem;" />
+                    <input type="text" class="input-premium" placeholder="Apartment, suite, etc. (optional)" style="margin-bottom: 1rem;" />
+                    <div class="form-row">
+                        <input type="text" class="input-premium" placeholder="City" required />
+                        <select class="input-premium" required>
+                            <option>Bagmati Province</option>
+                            <option>Gandaki Province</option>
+                            <option>Lumbini Province</option>
+                        </select>
+                        <input type="text" class="input-premium" placeholder="Phone Number" required />
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h2 class="section-title">2. Payment Method</h2>
+                    
+                    <div class="payment-methods">
+                        <label class="payment-label">
+                            <input type="radio" name="payment" checked />
+                            <span class="payment-name">Cash on Delivery (COD)</span>
+                            <span class="material-symbols-outlined">payments</span>
+                        </label>
+                        <label class="payment-label">
+                            <input type="radio" name="payment" />
+                            <span class="payment-name">eSewa Mobile Wallet</span>
+                            <span class="font-bold text-sm" style="color: #60bb46;">eSewa</span>
+                        </label>
+                        <label class="payment-label">
+                            <input type="radio" name="payment" />
+                            <span class="payment-name">Debit/Credit Card</span>
+                            <span class="material-symbols-outlined">credit_card</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Place Order</button>
+            </form>
+        </div>
+
+        <!-- Summary -->
+        <div class="summary-sidebar">
+            <h3 class="font-black mb-4 text-xl">Order Summary</h3>
+            
+            <div class="summary-item">
+                <div class="si-img">
+                    <img src="../assets/images/products/a.png" alt="Shoe"/>
+                    <span class="si-qty">1</span>
+                </div>
+                <div class="si-details">
+                    <div class="si-title">Air Jordan 1 Retro</div>
+                    <div class="text-xs text-muted">US 9</div>
+                </div>
+                <div class="si-price">Rs. 24,000</div>
+            </div>
+
+            <div class="summary-item">
+                <div class="si-img">
+                    <img src="../assets/images/products/c.png" alt="Shoe"/>
+                    <span class="si-qty">1</span>
+                </div>
+                <div class="si-details">
+                    <div class="si-title">Cloudrunner X Neon</div>
+                    <div class="text-xs text-muted">US 10</div>
+                </div>
+                <div class="si-price">Rs. 18,500</div>
+            </div>
+
+            <div style="border-top: 1px solid var(--color-surface-border); margin-top: 1.5rem; padding-top: 1.5rem;">
+                <div class="flex justify-between mb-2 text-sm">
+                    <span class="text-muted">Subtotal</span>
+                    <span class="font-bold">Rs. 42,500</span>
+                </div>
+                <div class="flex justify-between mb-2 text-sm">
+                    <span class="text-muted">Shipping</span>
+                    <span class="font-bold text-success">Free</span>
+                </div>
+                <div class="flex justify-between mt-4 border-top pt-4" style="border-top: 1px solid var(--color-surface-border);">
+                    <span class="font-bold text-lg">Total</span>
+                    <span class="font-black text-xl" style="color: var(--color-nepal-red);">Rs. 42,500</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="../assets/js/products.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+:root {
+    /* Premium White Theme - Nepali Vibe Edition */
+    --color-bg: #ffffff;
+    --color-surface: #f7f9fa;
+    --color-surface-hover: #eef1f4;
+    --color-surface-border: #e2e8f0;
+    
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-muted: #94a3b8;
+    
+    /* Nepali Flag Accents */
+    --color-nepal-red: #DC143C; /* Crimson Red */
+    --color-nepal-blue: #003893; /* Deep Royal Blue */
+    
+    /* Working Accents */
+    --color-accent: var(--color-nepal-red);
+    --color-accent-hover: #b91030;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    
+    --color-error: #e11d48;
+    --color-success: #10b981;
+
+    /* Typography */
+    --font-headline: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Layout & Spacing */
+    --container-max: 1440px;
+    --nav-height: 80px;
+
+    /* Borders & Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 32px;
+    --radius-pill: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.15);
+}
+
+::selection {
+    background-color: var(--color-nepal-blue);
+    color: var(--color-white);
+}

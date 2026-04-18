@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Track My Order | KickUpNepal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/variables.css"/>
+<link rel="stylesheet" href="../assets/css/global.css"/>
+<link rel="stylesheet" href="../assets/css/layout.css"/>
+<link rel="stylesheet" href="../assets/css/components.css"/>
+<style>
+.track-wrap{max-width:700px;margin:4rem auto 6rem;}
+.track-step{display:flex;gap:1.25rem;position:relative;padding-bottom:2rem;}
+.track-step::before{content:'';position:absolute;left:19px;top:40px;width:2px;height:calc(100% - 20px);background:var(--color-surface-border);}
+.track-step:last-child::before{display:none;}
+.step-dot{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;}
+.step-dot.done{background:linear-gradient(135deg,#003893,#DC143C);color:white;}
+.step-dot.current{background:#eef2ff;border:2px solid var(--color-nepal-blue);color:var(--color-nepal-blue);}
+.step-dot.pending{background:var(--color-surface);border:2px solid var(--color-surface-border);color:var(--color-text-muted);}
+</style>
+</head><body><!-- Top Promo Bar -->
+<div class="promo-bar">
+    Authentic Heat 🔥 Fast Shipping Across Nepal - From Kathmandu to EBC!
+</div>
+
+<!-- Main Retail Header -->
+<header class="header-main">
+    <div class="container navbar-top">
+        <a href="../index.html" class="brand-logo">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></a>
+        
+        <div class="nav-search">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Search for Jordans, Yeezys, Nike..."/>
+                <button class="search-btn material-symbols-outlined">search</button>
+            </div>
+        </div>
+        
+        <div class="nav-actions">
+            <a href="../pages/dashboard.html" class="action-item d-none md-flex">
+                <span class="material-symbols-outlined">favorite</span>
+                <span>Wishlist</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item" style="display:flex;align-items:center;gap:0.4rem;">
+                <div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:2px solid var(--color-nepal-red);flex-shrink:0;">
+                    <img src="../assets/images/users/user1.jpg" alt="Profile" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <span style="font-size:0.8rem;">My Account</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span>Cart</span>
+                <span class="cart-badge" style="background-color: var(--color-nepal-red);">3</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="navbar-categories no-scrollbar">
+        <div class="categories-list">
+            <a href="../pages/shop.html" style="color: var(--color-nepal-red); font-weight: 800;">Aago Deals 🔥</a>
+            <a href="../pages/shop.html">New Arrivals</a>
+            
+            <div class="has-mega-menu">
+                <a href="../pages/shop.html" style="cursor: pointer; position: relative; padding-bottom: 0.75rem;">Sneakers <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">expand_more</span></a>
+                <div class="mega-menu">
+                    <div class="mega-menu-inner">
+                        <div class="mega-menu-column">
+                            <h4>Nike</h4>
+                            <a href="../pages/shop.html">Air Force 1</a>
+                            <a href="../pages/shop.html">Air Max 90</a>
+                            <a href="../pages/shop.html">Dunk Low</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Jordan</h4>
+                            <a href="../pages/shop.html">Jordan 1 High</a>
+                            <a href="../pages/shop.html">Jordan 4</a>
+                            <a href="../pages/shop.html">Jordan 11</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Adidas</h4>
+                            <a href="../pages/shop.html">Yeezy Boost 350</a>
+                            <a href="../pages/shop.html">Yeezy Slide</a>
+                            <a href="../pages/shop.html">Samba Classic</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>New Balance</h4>
+                            <a href="../pages/shop.html">550 Series</a>
+                            <a href="../pages/shop.html">990v5 Core</a>
+                            <a href="../pages/shop.html">2002R Protection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../pages/blog.html">Blog</a>
+            <a href="../pages/about.html">About Us</a>
+            <a href="../pages/contact.html">Contact Us</a>
+        </div>
+    </div>
+</header>
+<div style="background:linear-gradient(135deg,#003893 0%,#DC143C 100%);color:white;padding:5rem 0;text-align:center;">
+  <div class="container"><h1 class="text-5xl font-black mb-3">Track Your Order</h1><p class="text-xl" style="opacity:.85;">Enter your Order ID to get real-time delivery updates.</p></div>
+</div>
+<main class="container">
+<div class="track-wrap">
+  <!-- Search Form -->
+  <div style="background:var(--color-surface);padding:2rem;border-radius:14px;border:1px solid var(--color-surface-border);margin-bottom:2rem;">
+    <h2 class="text-xl font-black mb-1">Order Lookup</h2>
+    <p class="text-muted text-sm mb-4">Your Order ID was sent to your email/phone at the time of purchase.</p>
+    <div style="display:flex;gap:.75rem;">
+      <input type="text" id="order-id" placeholder="e.g. KUN-8842" style="flex:1;padding:.85rem 1.25rem;border:1.5px solid var(--color-surface-border);border-radius:10px;font-size:1rem;outline:none;" oninput="this.style.borderColor='var(--color-nepal-blue)'"/>
+      <button class="btn btn-primary" style="padding:.85rem 2rem;" onclick="trackOrder()">Track</button>
+    </div>
+    <p style="font-size:.8rem;color:var(--color-text-muted);margin-top:.75rem;">Try: <strong>KUN-8842</strong> or <strong>KUN-8891</strong></p>
+  </div>
+
+  <!-- Result -->
+  <div id="track-result" style="display:none;">
+    <div style="background:var(--color-surface);padding:2rem;border-radius:14px;border:1px solid var(--color-surface-border);margin-bottom:1.5rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+        <div>
+          <div class="text-muted text-sm font-semibold" style="margin-bottom:.25rem;">Order ID</div>
+          <div class="font-black text-xl" id="tr-id">KUN-8842</div>
+        </div>
+        <span style="background:#dcfce7;color:#166534;padding:.4rem 1rem;border-radius:99px;font-weight:800;font-size:.85rem;" id="tr-status">In Transit</span>
+      </div>
+      <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--color-surface-border);">
+        <div id="tr-product" class="font-bold text-lg" style="margin-bottom:.25rem;"></div>
+        <div id="tr-info" class="text-muted text-sm"></div>
+      </div>
+    </div>
+
+    <h3 class="font-bold mb-3">Delivery Timeline</h3>
+    <div id="track-steps"></div>
+  </div>
+</div>
+</main>
+<footer>
+<div class="container">
+<div class="grid lg:grid-cols-2 gap-8 items-center" style="margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid #dee2e6;">
+<div><h3 class="text-2xl font-black mb-2">Subscribe to our Newsletter</h3><p class="text-muted text-sm">Get the latest sneaker news and 10% off your first order.</p></div>
+<div class="flex gap-2"><input type="email" placeholder="Your Email Address" style="flex:1;padding:.75rem 1rem;border:1px solid #ced4da;border-radius:4px;"/><button class="btn btn-accent" style="padding:.75rem 2rem;">Subscribe</button></div>
+</div>
+<div class="footer-grid">
+<div class="footer-col"><h4>CUSTOMER SERVICE</h4><div class="footer-links">
+<a href="help.html">Help Center</a><a href="track-order.html">Track Order</a>
+<a href="returns.html">Return Policy</a><a href="shipping.html">Shipping Info</a><a href="contact.html">Contact Us</a>
+</div></div>
+<div class="footer-col"><h4>COMPANY INFO</h4><div class="footer-links">
+<a href="about.html">About KickUpNepal</a><a href="careers.html">Careers</a>
+<a href="store-locator.html">Store Locator</a><a href="authenticity.html">Authenticity</a>
+</div></div>
+<div class="footer-col"><h4>TOP CATEGORIES</h4><div class="footer-links">
+<a href="shop.html">Air Jordan</a><a href="shop.html">Nike Dunk</a><a href="shop.html">Yeezy</a><a href="shop.html">New Balance</a>
+</div></div>
+<div class="footer-col" style="text-align:right;">
+<h2 class="font-black text-3xl mb-2">KickUp<span style="color:var(--color-nepal-red);">Nepal</span></h2>
+<p class="text-sm text-muted mb-4">The #1 Platform for Authentic Sneakers in Nepal.</p>
+<div style="margin-top:2rem;display:inline-block;text-align:left;">
+<h4 style="font-size:1.1rem;font-weight:800;margin-bottom:.75rem;">We Accept</h4>
+<div style="display:flex;gap:.75rem;align-items:center;">
+<div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;"><img src="../assets/images/design/esewa.png" alt="eSewa" style="height:18px;"></div>
+<div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;"><img src="../assets/images/design/khalti.png" alt="Khalti" style="height:18px;"></div>
+<div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;"><img src="../assets/images/design/pngegg.png" alt="Cards" style="height:20px;"></div>
+</div></div></div></div>
+<div class="footer-bottom"><div class="fb-inner container" style="display:flex;justify-content:center;align-items:center;padding:1rem 0;">
+<div style="color:var(--color-text-muted);">© 2024 KickUpNepal Pvt. Ltd. All Rights Reserved.</div>
+</div></div></div></footer><script src="../assets/js/products.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/search.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+const ORDERS = {
+  'KUN-8842':{product:'Air Jordan 1 Retro High OG',size:'US 10',price:'Rs. 24,000',date:'Oct 12, 2024',status:'Delivered',steps:[
+    {label:'Order Placed',info:'Oct 12, 2024 · 9:23 AM',state:'done'},
+    {label:'Payment Confirmed',info:'Oct 12, 2024 · 9:25 AM',state:'done'},
+    {label:'Packed & Dispatched',info:'Oct 12, 2024 · 1:00 PM',state:'done'},
+    {label:'Out For Delivery',info:'Oct 13, 2024 · 8:00 AM',state:'done'},
+    {label:'Delivered',info:'Oct 13, 2024 · 2:45 PM · Koteshwor, Kathmandu',state:'done'},
+  ]},
+  'KUN-8891':{product:'Nike Cloudrunner X Neon Pack',size:'US 9.5',price:'Rs. 18,500',date:'Oct 15, 2024',status:'In Transit',steps:[
+    {label:'Order Placed',info:'Oct 15, 2024 · 11:00 AM',state:'done'},
+    {label:'Payment Confirmed',info:'Oct 15, 2024 · 11:02 AM',state:'done'},
+    {label:'Packed & Dispatched',info:'Oct 15, 2024 · 3:30 PM',state:'done'},
+    {label:'Out For Delivery',info:'Expected Oct 17, 2024 · Morning',state:'current'},
+    {label:'Delivered',info:'Pending',state:'pending'},
+  ]},
+};
+function trackOrder(){
+  const id = document.getElementById('order-id').value.trim().toUpperCase();
+  const order = ORDERS[id];
+  const result = document.getElementById('track-result');
+  if(!order){alert('Order not found. Try KUN-8842 or KUN-8891');return;}
+  result.style.display='block';
+  document.getElementById('tr-id').textContent=id;
+  document.getElementById('tr-status').textContent=order.status;
+  document.getElementById('tr-status').style.background=order.status==='Delivered'?'#dcfce7':'#dbeafe';
+  document.getElementById('tr-status').style.color=order.status==='Delivered'?'#166534':'#1e40af';
+  document.getElementById('tr-product').textContent=order.product;
+  document.getElementById('tr-info').textContent='Size: '+order.size+' · '+order.price+' · Ordered '+order.date;
+  document.getElementById('track-steps').innerHTML=order.steps.map(s=>
+    '<div class="track-step"><div class="step-dot '+s.state+'"><span class="material-symbols-outlined" style="font-size:1.1rem;">'+(s.state==='done'?'check':s.state==='current'?'local_shipping':'radio_button_unchecked')+'</span></div><div style="padding-top:.4rem;"><div class="font-bold">'+s.label+'</div><div class="text-sm text-muted">'+s.info+'</div></div></div>'
+  ).join('');
+  result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body></html>

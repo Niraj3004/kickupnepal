@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Store Locator | KickUpNepal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/variables.css"/>
+<link rel="stylesheet" href="../assets/css/global.css"/>
+<link rel="stylesheet" href="../assets/css/layout.css"/>
+<link rel="stylesheet" href="../assets/css/components.css"/>
+<style>
+.store-layout{display:grid;grid-template-columns:1fr;gap:2rem;padding:4rem 0 6rem;}
+@media(min-width:1024px){.store-layout{grid-template-columns:360px 1fr;}}
+.store-card{background:var(--color-surface);padding:2rem;border-radius:14px;border:1px solid var(--color-surface-border);margin-bottom:1rem;cursor:pointer;transition:border-color .2s;}
+.store-card:hover,.store-card.active-store{border-color:var(--color-nepal-blue);background:#f0f4ff;}
+</style>
+</head><body><!-- Top Promo Bar -->
+<div class="promo-bar">
+    Authentic Heat 🔥 Fast Shipping Across Nepal - From Kathmandu to EBC!
+</div>
+
+<!-- Main Retail Header -->
+<header class="header-main">
+    <div class="container navbar-top">
+        <a href="../index.html" class="brand-logo">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></a>
+        
+        <div class="nav-search">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Search for Jordans, Yeezys, Nike..."/>
+                <button class="search-btn material-symbols-outlined">search</button>
+            </div>
+        </div>
+        
+        <div class="nav-actions">
+            <a href="../pages/dashboard.html" class="action-item d-none md-flex">
+                <span class="material-symbols-outlined">favorite</span>
+                <span>Wishlist</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item" style="display:flex;align-items:center;gap:0.4rem;">
+                <div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:2px solid var(--color-nepal-red);flex-shrink:0;">
+                    <img src="../assets/images/users/user1.jpg" alt="Profile" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <span style="font-size:0.8rem;">My Account</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span>Cart</span>
+                <span class="cart-badge" style="background-color: var(--color-nepal-red);">3</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="navbar-categories no-scrollbar">
+        <div class="categories-list">
+            <a href="../pages/shop.html" style="color: var(--color-nepal-red); font-weight: 800;">Aago Deals 🔥</a>
+            <a href="../pages/shop.html">New Arrivals</a>
+            
+            <div class="has-mega-menu">
+                <a href="../pages/shop.html" style="cursor: pointer; position: relative; padding-bottom: 0.75rem;">Sneakers <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">expand_more</span></a>
+                <div class="mega-menu">
+                    <div class="mega-menu-inner">
+                        <div class="mega-menu-column">
+                            <h4>Nike</h4>
+                            <a href="../pages/shop.html">Air Force 1</a>
+                            <a href="../pages/shop.html">Air Max 90</a>
+                            <a href="../pages/shop.html">Dunk Low</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Jordan</h4>
+                            <a href="../pages/shop.html">Jordan 1 High</a>
+                            <a href="../pages/shop.html">Jordan 4</a>
+                            <a href="../pages/shop.html">Jordan 11</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Adidas</h4>
+                            <a href="../pages/shop.html">Yeezy Boost 350</a>
+                            <a href="../pages/shop.html">Yeezy Slide</a>
+                            <a href="../pages/shop.html">Samba Classic</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>New Balance</h4>
+                            <a href="../pages/shop.html">550 Series</a>
+                            <a href="../pages/shop.html">990v5 Core</a>
+                            <a href="../pages/shop.html">2002R Protection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../pages/blog.html">Blog</a>
+            <a href="../pages/about.html">About Us</a>
+            <a href="../pages/contact.html">Contact Us</a>
+        </div>
+    </div>
+</header>
+<div style="background:linear-gradient(135deg,#003893 0%,#DC143C 100%);color:white;padding:5rem 0;text-align:center;">
+  <div class="container"><h1 class="text-5xl font-black mb-3">Store Locator</h1><p class="text-xl" style="opacity:.85;">Visit us in Kathmandu – Nepal's sneaker hub.</p></div>
+</div>
+<main class="container">
+<div class="store-layout">
+  <!-- Store List -->
+  <div>
+    <input type="text" placeholder="Search by city or district..." oninput="filterStores(this.value)" style="width:100%;padding:.85rem 1.25rem;border:1.5px solid var(--color-surface-border);border-radius:12px;font-size:.95rem;margin-bottom:1.5rem;outline:none;"/>
+    <div id="store-list">
+      <div class="store-card active-store" onclick="selectStore(this,'27.7140,85.3130')">
+        <h4 class="font-black mb-1">KickUpNepal — Thamel Flagship</h4>
+        <p class="text-sm text-muted mb-1">Thamel Marg, Near Kathmandu Guest House</p>
+        <p class="text-sm font-semibold" style="color:var(--color-nepal-blue);">Sun–Fri 10AM–7PM · Sat 11AM–5PM</p>
+        <div style="display:flex;gap:.75rem;margin-top:.75rem;">
+          <a href="https://maps.google.com/?q=Thamel,Kathmandu" target="_blank" class="btn" style="padding:.45rem 1rem;font-size:.8rem;text-decoration:none;">Get Directions</a>
+          <a href="tel:+9779801234567" class="btn btn-primary" style="padding:.45rem 1rem;font-size:.8rem;text-decoration:none;">Call</a>
+        </div>
+      </div>
+      <div class="store-card" onclick="selectStore(this,'27.6710,85.3190')">
+        <h4 class="font-black mb-1">KickUpNepal — Patan Outlet</h4>
+        <p class="text-sm text-muted mb-1">Mangal Bazaar, Lalitpur</p>
+        <p class="text-sm font-semibold" style="color:var(--color-nepal-blue);">Sun–Fri 11AM–6PM · Sat Closed</p>
+        <div style="display:flex;gap:.75rem;margin-top:.75rem;">
+          <a href="https://maps.google.com/?q=Mangal+Bazaar,Lalitpur" target="_blank" class="btn" style="padding:.45rem 1rem;font-size:.8rem;text-decoration:none;">Get Directions</a>
+          <a href="tel:+9779801234568" class="btn btn-primary" style="padding:.45rem 1rem;font-size:.8rem;text-decoration:none;">Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div style="border-radius:16px;overflow:hidden;border:1px solid var(--color-surface-border);height:520px;">
+    <iframe id="store-map"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=85.29,27.70,85.33,27.73&layer=mapnik&marker=27.7140,85.3130"
+      width="100%" height="100%" frameborder="0" scrolling="no"
+      title="KickUpNepal Store Locations">
+    </iframe>
+  </div>
+</div>
+</main>
+<footer>
+<div class="container">
+<div class="grid lg:grid-cols-2 gap-8 items-center" style="margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid #dee2e6;">
+<div><h3 class="text-2xl font-black mb-2">Subscribe to our Newsletter</h3><p class="text-muted text-sm">Get the latest sneaker news and 10% off your first order.</p></div>
+<div class="flex gap-2"><input type="email" placeholder="Your Email Address" style="flex:1;padding:.75rem 1rem;border:1px solid #ced4da;border-radius:4px;"/><button class="btn btn-accent" style="padding:.75rem 2rem;">Subscribe</button></div>
+</div>
+<div class="footer-grid">
+<div class="footer-col"><h4>CUSTOMER SERVICE</h4><div class="footer-links">
+<a href="help.html">Help Center</a><a href="track-order.html">Track Order</a>
+<a href="returns.html">Return Policy</a><a href="shipping.html">Shipping Info</a><a href="contact.html">Contact Us</a>
+</div></div>
+<div class="footer-col"><h4>COMPANY INFO</h4><div class="footer-links">
+<a href="about.html">About KickUpNepal</a><a href="careers.html">Careers</a>
+<a href="store-locator.html">Store Locator</a><a href="authenticity.html">Authenticity</a>
+</div></div>
+<div class="footer-col"><h4>TOP CATEGORIES</h4><div class="footer-links">
+<a href="shop.html">Air Jordan</a><a href="shop.html">Nike Dunk</a><a href="shop.html">Yeezy</a><a href="shop.html">New Balance</a>
+</div></div>
+<div class="footer-col" style="text-align:right;">
+<h2 class="font-black text-3xl mb-2">KickUp<span style="color:var(--color-nepal-red);">Nepal</span></h2>
+<p class="text-sm text-muted mb-4">The #1 Platform for Authentic Sneakers in Nepal.</p>
+<div style="margin-top:2rem;display:inline-block;text-align:left;">
+<h4 style="font-size:1.1rem;font-weight:800;margin-bottom:.75rem;">We Accept</h4>
+<div style="display:flex;gap:.75rem;align-items:center;">
+<div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;"><img src="../assets/images/design/esewa.png" alt="eSewa" style="height:18px;"></div>
+<div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;"><img src="../assets/images/design/khalti.png" alt="Khalti" style="height:18px;"></div>
+<div style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;"><img src="../assets/images/design/pngegg.png" alt="Cards" style="height:20px;"></div>
+</div></div></div></div>
+<div class="footer-bottom"><div class="fb-inner container" style="display:flex;justify-content:center;align-items:center;padding:1rem 0;">
+<div style="color:var(--color-text-muted);">© 2024 KickUpNepal Pvt. Ltd. All Rights Reserved.</div>
+</div></div></div></footer><script src="../assets/js/products.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/search.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+function selectStore(el,coords){
+  document.querySelectorAll('.store-card').forEach(c=>c.classList.remove('active-store'));
+  el.classList.add('active-store');
+  const [lat,lng]=coords.split(',');
+  document.getElementById('store-map').src='https://www.openstreetmap.org/export/embed.html?bbox='+(parseFloat(lng)-.01)+','+(parseFloat(lat)-.01)+','+(parseFloat(lng)+.01)+','+(parseFloat(lat)+.01)+'&layer=mapnik&marker='+lat+','+lng;
+}
+function filterStores(q){
+  document.querySelectorAll('.store-card').forEach(c=>{
+    c.style.display=c.textContent.toLowerCase().includes(q.toLowerCase())||!q?'':'none';
+  });
+}
+</script>
+</body></html>

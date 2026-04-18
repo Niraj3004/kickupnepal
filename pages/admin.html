@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Panel | KickUpNepal</title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="../assets/css/variables.css"/>
+    <link rel="stylesheet" href="../assets/css/global.css"/>
+    <link rel="stylesheet" href="../assets/css/layout.css"/>
+    <link rel="stylesheet" href="../assets/css/components.css"/>
+    <link rel="stylesheet" href="../assets/css/pages/dashboard.css"/>
+</head>
+<body>
+
+<div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="brand-logo" style="font-size: 1.25rem;">KickUp<span style="color: var(--color-nepal-red);">Admin</span></a>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <span class="material-symbols-outlined">monitoring</span>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">inventory_2</span>
+                Products
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">list_alt</span>
+                Orders
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">group</span>
+                Customers
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">campaign</span>
+                Marketing
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="../index.html" class="nav-item">
+                <span class="material-symbols-outlined">logout</span>
+                Exit Panel
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Topbar -->
+        <header class="topbar">
+            <h2 class="font-bold">Admin Overview</h2>
+            
+            <div class="flex items-center gap-4">
+                <div class="search-wrapper" style="width: 250px;">
+                    <input type="text" class="search-input" placeholder="Search orders..." style="padding: 0.5rem; border: none;"/>
+                    <button class="search-btn material-symbols-outlined" style="padding: 0 0.5rem;">search</button>
+                </div>
+                <button class="material-symbols-outlined text-muted">notifications</button>
+                <div class="user-profile">
+                    <div class="avatar" style="background-color: var(--color-text-primary);">A</div>
+                    <span class="font-semibold text-sm">Super Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Inner Content -->
+        <div class="dashboard-container">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-black">Store Performance</h1>
+                <button class="btn btn-primary" style="padding: 0.5rem 1rem;">
+                    <span class="material-symbols-outlined" style="margin-right: 0.5rem; font-size: 1rem;">download</span>
+                    Export Report
+                </button>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="text-sm font-bold">Total Revenue</span>
+                        <span class="material-symbols-outlined text-muted">payments</span>
+                    </div>
+                    <div class="stat-value">Rs. 1.2M</div>
+                    <div class="stat-change"><span class="material-symbols-outlined" style="font-size: 1rem;">trending_up</span> +14.5% from last month</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="text-sm font-bold">Total Orders</span>
+                        <span class="material-symbols-outlined text-muted">shopping_bag</span>
+                    </div>
+                    <div class="stat-value">342</div>
+                    <div class="stat-change"><span class="material-symbols-outlined" style="font-size: 1rem;">trending_up</span> +5.2% from last month</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="text-sm font-bold">Active Customers</span>
+                        <span class="material-symbols-outlined text-muted">group</span>
+                    </div>
+                    <div class="stat-value" style="color: var(--color-nepal-blue);">1,420</div>
+                    <div class="stat-change negative"><span class="material-symbols-outlined" style="font-size: 1rem;">trending_down</span> -1.2% from last month</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="text-sm font-bold">Conversion Rate</span>
+                        <span class="material-symbols-outlined text-muted">percent</span>
+                    </div>
+                    <div class="stat-value">3.24%</div>
+                    <div class="stat-change"><span class="material-symbols-outlined" style="font-size: 1rem;">trending_up</span> +0.4% from last month</div>
+                </div>
+            </div>
+
+            <!-- Recent Orders Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3 class="table-title">Recent Transactions</h3>
+                    <div class="flex gap-2">
+                        <button class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Filter</button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">#ORD-9921</td>
+                            <td>
+                                <div>Ram Shrestha</div>
+                                <div class="text-xs text-muted">ram@example.com</div>
+                            </td>
+                            <td class="font-bold">Rs. 24,000</td>
+                            <td><span class="status pending">Processing</span></td>
+                            <td>
+                                <button class="btn-icon" style="width: 2rem; height: 2rem;"><span class="material-symbols-outlined" style="font-size: 1rem;">edit</span></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">#ORD-9920</td>
+                            <td>
+                                <div>Sita Gurung</div>
+                                <div class="text-xs text-muted">sita@example.com</div>
+                            </td>
+                            <td class="font-bold">Rs. 45,000</td>
+                            <td><span class="status completed">Shipped</span></td>
+                            <td>
+                                <button class="btn-icon" style="width: 2rem; height: 2rem;"><span class="material-symbols-outlined" style="font-size: 1rem;">edit</span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<script src="../assets/js/products.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/search.js"></script>
+</body>
+</html>

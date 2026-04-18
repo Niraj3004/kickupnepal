@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Shopping Cart | KickUpNepal</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/css/variables.css"/>
+    <link rel="stylesheet" href="../assets/css/global.css"/>
+    <link rel="stylesheet" href="../assets/css/layout.css"/>
+    <link rel="stylesheet" href="../assets/css/components.css"/>
+    <style>
+    .cart-layout{display:grid;grid-template-columns:1fr;gap:2rem;padding:2rem 0 6rem;}
+    @media(min-width:1024px){.cart-layout{grid-template-columns:2fr 1fr;}}
+    .cart-item{display:flex;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--color-surface-border);}
+    .cart-item-img{width:110px;height:110px;background:var(--color-surface);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
+    .cart-item-img img{width:85%;object-fit:contain;}
+    .cart-item-info{flex:1;}
+    .qty-btn{width:32px;height:32px;border:1px solid var(--color-surface-border);background:var(--color-surface);border-radius:6px;font-size:1.1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .qty-btn:hover{background:var(--color-surface-border);}
+    .order-summary{background:var(--color-surface);padding:2rem;border-radius:14px;border:1px solid var(--color-surface-border);height:fit-content;position:sticky;top:110px;}
+    .summary-row{display:flex;justify-content:space-between;margin-bottom:.75rem;color:var(--color-text-secondary);font-size:.95rem;}
+    .summary-total{display:flex;justify-content:space-between;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--color-surface-border);font-size:1.25rem;font-weight:900;}
+    .empty-cart{text-align:center;padding:5rem 1rem;grid-column:1/-1;}
+</style>
+</head>
+<body>
+
+<!-- Top Promo Bar -->
+<div class="promo-bar">
+    Authentic Heat 🔥 Fast Shipping Across Nepal - From Kathmandu to EBC!
+</div>
+
+<!-- Main Retail Header -->
+<header class="header-main">
+    <div class="container navbar-top">
+        <a href="../index.html" class="brand-logo">KickUp<span style="color: var(--color-nepal-red);">Nepal</span></a>
+        
+        <div class="nav-search">
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Search for Jordans, Yeezys, Nike..."/>
+                <button class="search-btn material-symbols-outlined">search</button>
+            </div>
+        </div>
+        
+        <div class="nav-actions">
+            <a href="../pages/dashboard.html" class="action-item d-none md-flex">
+                <span class="material-symbols-outlined">favorite</span>
+                <span>Wishlist</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item" style="display:flex;align-items:center;gap:0.4rem;">
+                <div style="width:32px;height:32px;border-radius:50%;overflow:hidden;border:2px solid var(--color-nepal-red);flex-shrink:0;">
+                    <img src="../assets/images/users/user1.jpg" alt="Profile" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <span style="font-size:0.8rem;">My Account</span>
+            </a>
+            <a href="../pages/dashboard.html" class="action-item">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span>Cart</span>
+                <span class="cart-badge" style="background-color: var(--color-nepal-red);">3</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="navbar-categories no-scrollbar">
+        <div class="categories-list">
+            <a href="../pages/shop.html" style="color: var(--color-nepal-red); font-weight: 800;">Aago Deals 🔥</a>
+            <a href="../pages/shop.html">New Arrivals</a>
+            
+            <div class="has-mega-menu">
+                <a href="../pages/shop.html" style="cursor: pointer; position: relative; padding-bottom: 0.75rem;">Sneakers <span class="material-symbols-outlined" style="font-size: 1rem; vertical-align: middle;">expand_more</span></a>
+                <div class="mega-menu">
+                    <div class="mega-menu-inner">
+                        <div class="mega-menu-column">
+                            <h4>Nike</h4>
+                            <a href="../pages/shop.html">Air Force 1</a>
+                            <a href="../pages/shop.html">Air Max 90</a>
+                            <a href="../pages/shop.html">Dunk Low</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Jordan</h4>
+                            <a href="../pages/shop.html">Jordan 1 High</a>
+                            <a href="../pages/shop.html">Jordan 4</a>
+                            <a href="../pages/shop.html">Jordan 11</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>Adidas</h4>
+                            <a href="../pages/shop.html">Yeezy Boost 350</a>
+                            <a href="../pages/shop.html">Yeezy Slide</a>
+                            <a href="../pages/shop.html">Samba Classic</a>
+                        </div>
+                        <div class="mega-menu-column">
+                            <h4>New Balance</h4>
+                            <a href="../pages/shop.html">550 Series</a>
+                            <a href="../pages/shop.html">990v5 Core</a>
+                            <a href="../pages/shop.html">2002R Protection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../pages/blog.html">Blog</a>
+            <a href="../pages/about.html">About Us</a>
+            <a href="../pages/contact.html">Contact Us</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <h1 class="text-4xl font-black" style="margin:3rem 0 0;">Your Cart</h1>
+    <div class="cart-layout" id="cart-layout">
+        <div id="cart-items-wrap">
+            <div class="empty-cart" id="empty-state" style="display:none;">
+                <span class="material-symbols-outlined" style="font-size:5rem;color:#cbd5e1;display:block;margin-bottom:1rem;">shopping_cart</span>
+                <h2 class="text-2xl font-bold mb-2">Your cart is empty</h2>
+                <p class="text-muted mb-6">Looks like you haven't added any sneakers yet.</p>
+                <a href="shop.html" class="btn btn-primary btn-lg" style="text-decoration:none;">Start Shopping</a>
+            </div>
+            <div id="cart-items"></div>
+        </div>
+        <div class="order-summary" id="order-summary" style="display:none;">
+            <h2 class="text-xl font-bold mb-5">Order Summary</h2>
+            <div class="summary-row"><span>Subtotal</span><span id="subtotal" class="font-semibold"></span></div>
+            <div class="summary-row"><span>Shipping</span><span class="font-semibold" style="color:var(--color-success);">FREE</span></div>
+            <div class="summary-row"><span>Tax (13% VAT)</span><span id="tax" class="font-semibold"></span></div>
+            <div class="summary-total">
+                <span>Total</span>
+                <span id="grand-total" style="color:var(--color-nepal-red);"></span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary btn-lg" style="width:100%;margin-top:1.5rem;display:flex;text-decoration:none;justify-content:center;">Proceed to Checkout →</a>
+            <div class="text-center mt-3 text-xs text-muted">
+                <span class="material-symbols-outlined align-middle text-sm">lock</span> Secure Checkout · eSewa / Khalti / COD
+            </div>
+            <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--color-surface-border);">
+                <div style="display:flex;gap:.5rem;align-items:center;">
+                    <input type="text" id="coupon-input" placeholder="Coupon code" style="flex:1;padding:.6rem 1rem;border:1px solid var(--color-surface-border);border-radius:8px;font-size:.85rem;"/>
+                    <button class="btn" style="padding:.6rem 1rem;font-weight:700;font-size:.85rem;" onclick="alert('Coupon applied! 10% off.')">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Fat Footer Mega Retail -->
+<footer>
+    <div class="container">
+        <div class="grid lg:grid-cols-2 gap-8 items-center" style="margin-bottom: 4rem; padding-bottom: 4rem; border-bottom: 1px solid #dee2e6;">
+            <div>
+                <h3 class="text-2xl font-black mb-2">Subscribe to our Newsletter</h3>
+                <p class="text-muted text-sm">Get the latest sneaker news and 10% off your first order.</p>
+            </div>
+            <div class="flex gap-2">
+                <input type="email" placeholder="Your Email Address" style="flex:1; padding: 0.75rem 1rem; border: 1px solid #ced4da; border-radius: 4px;"/>
+                <button class="btn btn-accent" style="padding: 0.75rem 2rem;">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>CUSTOMER SERVICE</h4>
+                <div class="footer-links">
+                    <a href="help.html">Help Center</a>
+                    <a href="track-order.html">Track Order</a>
+                    <a href="returns.html">Return Policy</a>
+                    <a href="shipping.html">Shipping Inside Nepal</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>COMPANY INFO</h4>
+                <div class="footer-links">
+                    <a href="about.html">About KickUpNepal</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="store-locator.html">Store Locator</a>
+                    <a href="authenticity.html">Authenticity Guarantee</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>TOP CATEGORIES</h4>
+                <div class="footer-links">
+                    <a href="shop.html">Air Jordan</a>
+                    <a href="shop.html">Nike Dunk</a>
+                    <a href="shop.html">Yeezy</a>
+                    <a href="shop.html">New Balance</a>
+                </div>
+            </div>
+            <div class="footer-col" style="text-align:right;">
+                <h2 class="font-black text-3xl mb-2">KickUp<span style="color:var(--color-nepal-red);">Nepal</span></h2>
+                <p class="text-sm text-muted mb-4">The #1 Platform for Authentic Sneakers in Nepal.</p>
+                <div style="margin-top:2rem;display:inline-block;text-align:left;">
+                    <h4 style="font-size:1.1rem;font-weight:800;margin-bottom:0.75rem;">We Accept</h4>
+                    <div style="display:flex;gap:0.75rem;align-items:center;">
+                        <div style="background:white;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;">
+                            <img src="../assets/images/design/esewa.png" alt="eSewa" style="height:18px;object-fit:contain;">
+                        </div>
+                        <div style="background:white;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;">
+                            <img src="../assets/images/design/khalti.png" alt="Khalti" style="height:18px;object-fit:contain;">
+                        </div>
+                        <div style="background:white;border:1px solid #e2e8f0;border-radius:8px;width:64px;height:40px;display:flex;justify-content:center;align-items:center;">
+                            <img src="../assets/images/design/pngegg.png" alt="Cards" style="height:20px;object-fit:contain;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="fb-inner container" style="display:flex;justify-content:center;align-items:center;padding:1rem 0;">
+                <div style="color:var(--color-text-muted);">© 2024 KickUpNepal Pvt. Ltd. All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="../assets/js/products.js"></script>
+<script src="../assets/js/cart.js"></script>
+<script src="../assets/js/search.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+function renderCart(){
+    const cart = KUNCart.get();
+    const itemsEl = document.getElementById('cart-items');
+    const emptyState = document.getElementById('empty-state');
+    const summary = document.getElementById('order-summary');
+
+    if(!cart.length){
+        emptyState.style.display='block';
+        itemsEl.innerHTML='';
+        summary.style.display='none';
+        return;
+    }
+    emptyState.style.display='none';
+    summary.style.display='block';
+
+    const subtotal = cart.reduce((s,i)=>s+i.price*i.qty,0);
+    const tax = Math.round(subtotal*0.13);
+    const total = subtotal+tax;
+
+    itemsEl.innerHTML = cart.map(item=>`
+        <div class="cart-item" data-key="${item.key}">
+            <div class="cart-item-img"><img src="${item.image}" alt="${item.name}"/></div>
+            <div class="cart-item-info">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem;">
+                    <div>
+                        <h3 class="font-bold" style="font-size:1.05rem;">${item.name}</h3>
+                        <p class="text-sm text-muted">Size: US ${item.size} · ${item.brand}</p>
+                    </div>
+                    <div class="font-black" style="font-size:1.05rem;white-space:nowrap;">Rs. ${(item.price).toLocaleString()}</div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-top:1rem;">
+                    <div style="display:flex;align-items:center;gap:.5rem;">
+                        <button class="qty-btn" onclick="KUNCart.updateQty('${item.key}',-1);renderCart();">−</button>
+                        <span style="font-weight:800;font-size:1rem;min-width:2rem;text-align:center;">${item.qty}</span>
+                        <button class="qty-btn" onclick="KUNCart.updateQty('${item.key}',1);renderCart();">+</button>
+                    </div>
+                    <button onclick="KUNCart.remove('${item.key}');renderCart();" style="background:none;border:none;color:#ef4444;cursor:pointer;display:flex;align-items:center;gap:.25rem;font-weight:700;font-size:.85rem;">
+                        <span class="material-symbols-outlined" style="font-size:1.1rem;">delete</span> Remove
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    document.getElementById('subtotal').textContent='Rs. '+subtotal.toLocaleString();
+    document.getElementById('tax').textContent='Rs. '+tax.toLocaleString();
+    document.getElementById('grand-total').textContent='Rs. '+total.toLocaleString();
+}
+document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+</body>
+</html>
